@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefak | Farros Shaffira</title>
+    
+    <!-- Fonts: Roboto, Poppins, Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cText: '#1E293B',       /* Body copy */
+                        cBg: '#F7FAF9',         /* Background */
+                        cPrimary: '#0F2A52',    /* Navbar, Headings */
+                        cSecondary: '#1E4C8A',  /* Borders, Icons, Hover */
+                        cAccent: '#4C9A6E',     /* Buttons, Badges */
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif'],
+                        raleway: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <nav class="fixed w-full z-50 navbar-glass border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center navbar-brand-logo">
+                    <img src="assets/img/logo navbar3.png" alt="Logo E-Portofolio" class="h-10 sm:h-12 w-auto object-contain">
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">Home</a>
+                    <a href="about.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">About</a>
+                    <a href="portofolio.html" class="nav-link-modern active-link text-cAccent font-semibold px-1 py-2">Artefak</a>
+                    <a href="refleksi.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">Refleksi</a>
+                    <a href="karyainovasi.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">Inovasi</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-cAccent p-2 rounded-lg transition-colors focus:outline-none" aria-label="Buka Menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glowing Divider Line -->
+        <div class="h-[2px] w-full glow-divider"></div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cPrimary/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl transition-all duration-300">
+            <div class="px-4 pt-3 pb-4 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">About</a>
+                <a href="portofolio.html" class="block px-3 py-2 text-base font-semibold text-white bg-cAccent/20 border-l-4 border-cAccent rounded-r-md">Artefak</a>
+                <a href="refleksi.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">Refleksi</a>
+                <a href="karyainovasi.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">Karya Inovasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 flex-grow">
+        <section id="portfolio" class="page-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                
+                <!-- Section Title -->
+                <div class="text-center mb-16 fade-in">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-cPrimary mb-2">Kumpulan Artefak PPG</h1>
+                    <p class="text-gray-600 max-w-xl mx-auto">Silakan pilih tahapan semester perkuliahan untuk melihat rincian mata kuliah, tugas, dan artefak pembelajaran.</p>
+                    <div class="w-20 h-1 bg-cAccent mx-auto rounded-full mt-4"></div>
+                </div>
+
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    
+                    <!-- Semester 1 Card -->
+                    <a href="artefak.html?sem=sem1" class="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 fade-in block">
+                        <div class="h-44 bg-gradient-to-br from-cPrimary to-cSecondary relative overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-widest group-hover:scale-110 transition-transform">SEMESTER 1</h2>
+                            </div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <div class="w-16 h-16 bg-cAccent rounded-full flex items-center justify-center mx-auto -mt-16 relative z-10 border-4 border-white shadow-md">
+                                <i class="fas fa-book-open text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-cPrimary mt-4 mb-2">Fondasi & Konsep</h3>
+                            <p class="text-gray-500 mb-6 leading-relaxed">Kumpulan tugas dan artefak dari 6 mata kuliah yang membangun paradigma pendidik profesional.</p>
+                            <span class="inline-flex items-center text-cSecondary font-semibold group-hover:text-cAccent transition-colors">
+                                Lihat Artefak Semester 1 <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Semester 2 Card -->
+                    <a href="artefak.html?sem=sem2" class="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 fade-in block">
+                        <div class="h-44 bg-gradient-to-br from-cAccent to-green-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-widest group-hover:scale-110 transition-transform">SEMESTER 2</h2>
+                            </div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <div class="w-16 h-16 bg-cPrimary rounded-full flex items-center justify-center mx-auto -mt-16 relative z-10 border-4 border-white shadow-md">
+                                <i class="fas fa-laptop-code text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-cPrimary mt-4 mb-2">Penerapan & Inovasi</h3>
+                            <p class="text-gray-500 mb-6 leading-relaxed">Kumpulan tugas dan artefak dari 5 mata kuliah fokus pada implementasi dan praktik mengajar nyata.</p>
+                            <span class="inline-flex items-center text-cAccent font-semibold group-hover:text-cPrimary transition-colors">
+                                Lihat Artefak Semester 2 <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="relative bg-gradient-to-b from-[#0B1E3B] to-cPrimary text-white py-5 mt-auto border-t border-white/10 shadow-2xl overflow-hidden">
+        <!-- Glowing Accent Divider Top -->
+        <div class="absolute top-0 inset-x-0 h-[2px] glow-divider"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-xs sm:text-sm">
+                
+                <!-- 1 Baris: Copyright + Social Link -->
+                <div class="flex items-center gap-3 text-gray-300 flex-wrap justify-center">
+                    <p>&copy; Copyright <strong class="text-white font-semibold tracking-wide">Fyora</strong>. All Rights Reserved</p>
+                    <span class="text-gray-500">•</span>
+                    <a href="https://www.instagram.com/farrosfira/" target="_blank" rel="noopener noreferrer" class="social-btn-ig w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center text-xs shadow-sm" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+
+                <!-- Credits -->
+                <div class="text-gray-400 text-xs">
+                    Designed by <span class="text-gray-200 font-medium hover:text-cAccent transition-colors">Fyora</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-cAccent text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-green-700 z-50 transform hover:-translate-y-1" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
+

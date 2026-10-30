@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refleksi Perjalanan | Farros Shaffira</title>
+
+    <!-- Fonts: Roboto, Poppins, Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cText: "#1E293B" /* Body copy */,
+              cBg: "#F7FAF9" /* Background */,
+              cPrimary: "#0F2A52" /* Navbar, Headings */,
+              cSecondary: "#1E4C8A" /* Borders, Icons, Hover */,
+              cAccent: "#4C9A6E" /* Buttons, Badges */,
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              roboto: ["Roboto", "sans-serif"],
+              raleway: ["Raleway", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="antialiased flex flex-col min-h-screen">
+    <!-- Header / Navbar -->
+    <nav
+      class="fixed w-full z-50 navbar-glass border-b border-white/10 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <a
+            href="index.html"
+            class="flex-shrink-0 flex items-center navbar-brand-logo"
+          >
+            <img
+              src="assets/img/logo navbar3.png"
+              alt="Logo E-Portofolio"
+              class="h-10 sm:h-12 w-auto object-contain"
+            />
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              href="index.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >About</a
+            >
+            <a
+              href="portofolio.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >Artefak</a
+            >
+            <a
+              href="refleksi.html"
+              class="nav-link-modern active-link text-cAccent font-semibold px-1 py-2"
+              >Refleksi</a
+            >
+            <a
+              href="karyainovasi.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >Inovasi</a
+            >
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-white hover:text-cAccent p-2 rounded-lg transition-colors focus:outline-none"
+              aria-label="Buka Menu"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glowing Divider Line -->
+      <div class="h-[2px] w-full glow-divider"></div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-cPrimary/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl transition-all duration-300"
+      >
+        <div class="px-4 pt-3 pb-4 space-y-2">
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >About</a
+          >
+          <a
+            href="portofolio.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >Artefak</a
+          >
+          <a
+            href="refleksi.html"
+            class="block px-3 py-2 text-base font-semibold text-white bg-cAccent/20 border-l-4 border-cAccent rounded-r-md"
+            >Refleksi</a
+          >
+          <a
+            href="karyainovasi.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >Karya Inovasi</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 flex-grow">
+      <section id="refleksi" class="page-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <!-- Header -->
+          <div class="text-center mb-16 fade-in">
+            <h1 class="text-3xl sm:text-4xl font-bold text-cPrimary mb-2">
+              Refleksi Perjalanan
+            </h1>
+            <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Merangkai pengalaman, dinamika tantangan, dan proses transformasi
+              diri selama mengikuti perkuliahan PPG menuju pendidik profesional
+              sejati.
+            </p>
+            <div class="w-20 h-1 bg-cAccent mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Kolom Kiri: Timeline & Nilai Karakter -->
+            <div class="lg:col-span-5 space-y-10 fade-in">
+              <!-- Timeline Container -->
+              <div class="relative timeline-container pl-12">
+                <!-- Item 1: Awal Perkuliahan -->
+                <div class="mb-8 relative">
+                  <div
+                    class="absolute -left-[3.25rem] bg-cAccent w-8 h-8 rounded-full border-4 border-white flex items-center justify-center shadow-md"
+                  >
+                    <i class="fas fa-seedling text-white text-xs"></i>
+                  </div>
+
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 cursor-pointer hover:border-cAccent hover:shadow-md transition-all"
+                    onclick="toggleRefleksiDetail('r1')"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h3 class="font-bold text-cPrimary text-lg">
+                        Awal Perkuliahan
+                      </h3>
+                      <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                      Memulai perjalanan baru dari latar belakang Informatika
+                      murni.
+                    </p>
+                  </div>
+
+                  <div
+                    id="r1"
+                    class="hidden mt-3 p-4 bg-white rounded-xl text-sm text-gray-600 border-l-4 border-cAccent shadow-sm"
+                  >
+                    Sebagai lulusan Informatika murni, saya belum memiliki
+                    pemahaman tentang seluk-beluk dunia pendidikan, khususnya
+                    mengenai pedagogi, karakteristik peserta didik, dan proses
+                    pembelajaran. Memasuki PPG menjadi pengalaman baru sekaligus
+                    tantangan bagi saya untuk mengenal dunia pendidikan dari
+                    dasar.
+                  </div>
+                </div>
+
+                <!-- Item 2: Perkuliahan Semester 1 -->
+                <div class="mb-8 relative">
+                  <div
+                    class="absolute -left-[3.25rem] bg-cSecondary w-8 h-8 rounded-full border-4 border-white flex items-center justify-center shadow-md"
+                  >
+                    <i class="fas fa-book-open text-white text-xs"></i>
+                  </div>
+
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 cursor-pointer hover:border-cSecondary hover:shadow-md transition-all"
+                    onclick="toggleRefleksiDetail('r2')"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h3 class="font-bold text-cPrimary text-lg">
+                        Perkuliahan Semester 1
+                      </h3>
+                      <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                      Mulai mengenal dan memahami dasar-dasar pendidikan.
+                    </p>
+                  </div>
+
+                  <div
+                    id="r2"
+                    class="hidden mt-3 p-4 bg-white rounded-xl text-sm text-gray-600 border-l-4 border-cSecondary shadow-sm"
+                  >
+                    Melalui perkuliahan semester 1, saya mulai memahami
+                    dasar-dasar pendidikan, filosofi pendidikan, karakteristik
+                    peserta didik, serta konsep pembelajaran dan asesmen.
+                    Berbagai materi dan tugas perkuliahan membantu saya
+                    membangun pemahaman awal tentang peran guru dan bagaimana
+                    pembelajaran seharusnya dirancang sesuai kebutuhan murid.
+                  </div>
+                </div>
+
+                <!-- Item 3: PPL Terbimbing -->
+                <div class="mb-8 relative">
+                  <div
+                    class="absolute -left-[3.25rem] bg-cAccent w-8 h-8 rounded-full border-4 border-white flex items-center justify-center shadow-md"
+                  >
+                    <i class="fas fa-chalkboard-teacher text-white text-xs"></i>
+                  </div>
+
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 cursor-pointer hover:border-cAccent hover:shadow-md transition-all"
+                    onclick="toggleRefleksiDetail('r3')"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h3 class="font-bold text-cPrimary text-lg">
+                        PPL Terbimbing
+                      </h3>
+                      <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                      Menerapkan pengetahuan semester 1 dalam praktik
+                      pembelajaran.
+                    </p>
+                  </div>
+
+                  <div
+                    id="r3"
+                    class="hidden mt-3 p-4 bg-white rounded-xl text-sm text-gray-600 border-l-4 border-cAccent shadow-sm"
+                  >
+                    Pada tahap PPL Terbimbing, saya mulai mencoba menerapkan
+                    pengetahuan yang diperoleh selama semester 1 ke dalam
+                    praktik pembelajaran di kelas. Dengan bimbingan guru pamong,
+                    saya belajar mengelola kelas, menyampaikan materi, memahami
+                    respons murid, serta menyesuaikan pembelajaran dengan
+                    kondisi nyata. Pengalaman ini membantu saya menghubungkan
+                    teori pendidikan dengan praktik mengajar.
+                  </div>
+                </div>
+
+                <!-- Item 4: Perkuliahan Semester 2 -->
+                <div class="mb-8 relative">
+                  <div
+                    class="absolute -left-[3.25rem] bg-cSecondary w-8 h-8 rounded-full border-4 border-white flex items-center justify-center shadow-md"
+                  >
+                    <i class="fas fa-lightbulb text-white text-xs"></i>
+                  </div>
+
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 cursor-pointer hover:border-cSecondary hover:shadow-md transition-all"
+                    onclick="toggleRefleksiDetail('r4')"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h3 class="font-bold text-cPrimary text-lg">
+                        Perkuliahan Semester 2
+                      </h3>
+                      <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                      Memperluas wawasan dan memperdalam kompetensi sebagai
+                      calon guru.
+                    </p>
+                  </div>
+
+                  <div
+                    id="r4"
+                    class="hidden mt-3 p-4 bg-white rounded-xl text-sm text-gray-600 border-l-4 border-cSecondary shadow-sm"
+                  >
+                    Pada semester 2, pengetahuan saya tentang dunia pendidikan
+                    semakin berkembang melalui materi yang lebih mendalam,
+                    seperti pembelajaran sosial emosional, asesmen,
+                    profesionalisme guru, dan pembelajaran mendalam. Saya
+                    semakin memahami bahwa menjadi guru tidak hanya tentang
+                    menyampaikan materi, tetapi juga membimbing perkembangan
+                    akademik, sosial, dan karakter peserta didik.
+                  </div>
+                </div>
+
+                <!-- Item 5: PPL Mandiri -->
+                <div class="relative">
+                  <div
+                    class="absolute -left-[3.25rem] bg-cPrimary w-8 h-8 rounded-full border-4 border-white flex items-center justify-center shadow-md"
+                  >
+                    <i class="fas fa-graduation-cap text-white text-xs"></i>
+                  </div>
+
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 cursor-pointer hover:border-cPrimary hover:shadow-md transition-all"
+                    onclick="toggleRefleksiDetail('r5')"
+                  >
+                    <div class="flex justify-between items-center">
+                      <h3 class="font-bold text-cPrimary text-lg">
+                        PPL Mandiri
+                      </h3>
+                      <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">
+                      Mulai merancang dan melaksanakan pembelajaran secara
+                      mandiri.
+                    </p>
+                  </div>
+
+                  <div
+                    id="r5"
+                    class="hidden mt-3 p-4 bg-white rounded-xl text-sm text-gray-600 border-l-4 border-cPrimary shadow-sm"
+                  >
+                    Pada tahap PPL Mandiri, saya mulai memperoleh pengalaman
+                    mengelola pembelajaran secara lebih mandiri, mulai dari
+                    menyusun modul ajar, menentukan strategi dan metode
+                    pembelajaran, menyiapkan media pembelajaran, hingga
+                    melaksanakan asesmen. Saya belajar mengambil keputusan dalam
+                    proses mengajar, menyesuaikan strategi dengan kebutuhan
+                    murid, serta mengevaluasi pembelajaran sebagai bekal untuk
+                    menjadi guru yang profesional.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Nilai Karakter yang Dipelajari -->
+              <div>
+                <h2
+                  class="text-xl font-bold text-cPrimary mb-4 flex items-center"
+                >
+                  <i class="fas fa-star text-yellow-500 mr-3"></i> Nilai
+                  Karakter yang Dipelajari
+                </h2>
+                <div class="grid grid-cols-2 gap-4">
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md hover:border-cSecondary transition-all"
+                  >
+                    <div
+                      class="w-12 h-12 bg-blue-50 text-cSecondary rounded-xl flex items-center justify-center mx-auto mb-3 text-xl"
+                    >
+                      <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-cPrimary">Adaptif</h3>
+                  </div>
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md hover:border-cAccent transition-all"
+                  >
+                    <div
+                      class="w-12 h-12 bg-green-50 text-cAccent rounded-xl flex items-center justify-center mx-auto mb-3 text-xl"
+                    >
+                      <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-cPrimary">Kreatif</h3>
+                  </div>
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md hover:border-cSecondary transition-all"
+                  >
+                    <div
+                      class="w-12 h-12 bg-blue-50 text-cSecondary rounded-xl flex items-center justify-center mx-auto mb-3 text-xl"
+                    >
+                      <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-cPrimary">Kolaboratif</h3>
+                  </div>
+                  <div
+                    class="bg-white p-5 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-md hover:border-cAccent transition-all"
+                  >
+                    <div
+                      class="w-12 h-12 bg-green-50 text-cAccent rounded-xl flex items-center justify-center mx-auto mb-3 text-xl"
+                    >
+                      <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-cPrimary">
+                      Computational Thinking
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kolom Kanan: Mata Kuliah yang Mendukung Pengembangan Diri -->
+            <div class="lg:col-span-7 space-y-6 fade-in">
+              <div>
+                <h2
+                  class="text-xl font-bold text-cPrimary mb-2 flex items-center"
+                >
+                  <i class="fas fa-book-open text-cAccent mr-3"></i>
+                  Mata Kuliah yang Mendukung Pengembangan Diri
+                </h2>
+                <p class="text-sm text-gray-500 leading-relaxed mb-5">
+                  Berbagai mata kuliah selama PPG memberikan pengalaman dan
+                  pemahaman baru yang membantu saya berkembang, baik dalam pola
+                  pikir, keterampilan, maupun kesiapan menjadi seorang pendidik
+                  profesional.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <!-- Computational Thinking -->
+                  <div
+                    class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                  >
+                    <div class="flex items-center gap-3 mb-4">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cAccent/10 flex items-center justify-center flex-shrink-0"
+                      >
+                        <i class="fas fa-laptop-code text-cAccent text-lg"></i>
+                      </div>
+                      <div>
+                        <span
+                          class="text-[10px] font-bold text-cAccent uppercase tracking-wider"
+                          >Mata Kuliah 01</span
+                        >
+                        <h3
+                          class="font-bold text-cPrimary text-base leading-snug"
+                        >
+                          Computational Thinking
+                        </h3>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                      Saya belajar bahwa Informatika tidak selalu harus
+                      diajarkan menggunakan komputer, tetapi juga dapat
+                      dilakukan melalui pendekatan <em>unplugged</em>. Selain
+                      itu, saya memahami penerapan empat konsep utama, yaitu
+                      dekomposisi, pengenalan pola, abstraksi, dan algoritma
+                      dalam menyelesaikan permasalahan kehidupan sehari-hari.
+                    </p>
+                  </div>
+
+                  <!-- Growth Mindset -->
+                  <div
+                    class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                  >
+                    <div class="flex items-center gap-3 mb-4">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cSecondary/10 flex items-center justify-center flex-shrink-0"
+                      >
+                        <i class="fas fa-seedling text-cSecondary text-lg"></i>
+                      </div>
+                      <div>
+                        <span
+                          class="text-[10px] font-bold text-cSecondary uppercase tracking-wider"
+                          >Mata Kuliah 02</span
+                        >
+                        <h3
+                          class="font-bold text-cPrimary text-base leading-snug"
+                        >
+                          Growth Mindset
+                        </h3>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                      Saya belajar untuk memiliki pola pikir positif dalam
+                      menghadapi berbagai tantangan. Ketika belum berhasil,
+                      bukan berarti saya tidak mampu, melainkan perlu berusaha
+                      lebih keras, memperbaiki diri, dan terus belajar. Saya
+                      semakin yakin bahwa kemampuan dapat berkembang melalui
+                      proses dan ketekunan.
+                    </p>
+                  </div>
+
+                  <!-- Pembelajaran Sosial Emosional -->
+                  <div
+                    class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                  >
+                    <div class="flex items-center gap-3 mb-4">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cAccent/10 flex items-center justify-center flex-shrink-0"
+                      >
+                        <i class="fas fa-heart text-cAccent text-lg"></i>
+                      </div>
+                      <div>
+                        <span
+                          class="text-[10px] font-bold text-cAccent uppercase tracking-wider"
+                          >Mata Kuliah 03</span
+                        >
+                        <h3
+                          class="font-bold text-cPrimary text-base leading-snug"
+                        >
+                          Pembelajaran Sosial Emosional
+                        </h3>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                      Saya belajar bahwa proses pendidikan tidak hanya berkaitan
+                      dengan kemampuan akademik, tetapi juga perkembangan sosial
+                      dan emosional. Sebagai calon guru, saya perlu mengenali
+                      dan mengelola emosi, mengembangkan empati, serta membangun
+                      hubungan positif dengan peserta didik agar tercipta
+                      lingkungan belajar yang nyaman dan mendukung.
+                    </p>
+                  </div>
+
+                  <!-- Etika dan Profesionalisme Guru -->
+                  <div
+                    class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                  >
+                    <div class="flex items-center gap-3 mb-4">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cSecondary/10 flex items-center justify-center flex-shrink-0"
+                      >
+                        <i class="fas fa-user-tie text-cSecondary text-lg"></i>
+                      </div>
+                      <div>
+                        <span
+                          class="text-[10px] font-bold text-cSecondary uppercase tracking-wider"
+                          >Mata Kuliah 04</span
+                        >
+                        <h3
+                          class="font-bold text-cPrimary text-base leading-snug"
+                        >
+                          Etika dan Profesionalisme Guru
+                        </h3>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                      Saya memahami bahwa tugas guru bukan sekadar membagikan
+                      ilmu pengetahuan, tetapi juga menjadi teladan bagi peserta
+                      didik. Melalui pembelajaran ini, saya mengenal 10 karakter
+                      luhur guru yang perlu diterapkan secara tepat sesuai
+                      dengan situasi dan kondisi ketika berinteraksi dengan
+                      murid.
+                    </p>
+                  </div>
+
+                  <!-- Mata Kuliah 05 -->
+                  <div
+                    class="sm:col-span-2 bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                  >
+                    <div class="flex items-center gap-3 mb-4">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cAccent/10 flex items-center justify-center flex-shrink-0"
+                      >
+                        <i
+                          class="fas fa-chalkboard-teacher text-cAccent text-lg"
+                        ></i>
+                      </div>
+                      <div>
+                        <span
+                          class="text-[10px] font-bold text-cAccent uppercase tracking-wider"
+                          >Mata Kuliah 05</span
+                        >
+                        <h3
+                          class="font-bold text-cPrimary text-base leading-snug"
+                        >
+                          Pembelajaran Mendalam dan Asesmen Lanjutan
+                        </h3>
+                      </div>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                      Saya memperoleh pemahaman bahwa pendekatan pembelajaran
+                      dapat disesuaikan dengan latar belakang dan kebutuhan
+                      peserta didik. Saya mengenal pendekatan
+                      <em>Culturally Responsive Teaching (CRT)</em> dan
+                      <em>Teaching at the Right Level (TaRL)</em>, yang kemudian
+                      mulai saya coba terapkan dalam pembelajaran agar kegiatan
+                      belajar lebih kontekstual dan sesuai dengan kemampuan
+                      serta karakteristik murid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- REFLEKSI PENGALAMAN BELAJAR SELAMA PPG -->
+            <!-- ====================================== -->
+
+            <div class="lg:col-span-12 space-y-6">
+              <!-- Section Heading -->
+              <div>
+                <h2
+                  class="text-xl font-bold text-cPrimary mb-2 flex items-center"
+                >
+                  <i class="fas fa-book-reader text-cAccent mr-3"></i>
+                  Refleksi Pengalaman Belajar Selama Mengikuti Program PPG
+                </h2>
+
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Merefleksikan perubahan pemahaman, pandangan, dan komitmen
+                  setelah mengikuti seluruh rangkaian pembelajaran dalam Program
+                  PPG.
+                </p>
+              </div>
+
+              <!-- POIN REFLEKSI 01 -->
+              <div
+                class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-br from-cAccent to-emerald-600 text-white shadow-md shadow-cAccent/30 flex items-center justify-center flex-shrink-0 font-bold text-sm tracking-wider border-b-2 border-emerald-800"
+                  >
+                    01
+                  </div>
+
+                  <div class="flex-1">
+                    <span
+                      class="text-[10px] font-bold text-cAccent uppercase tracking-wider"
+                    >
+                      Refleksi Pendidikan Indonesia
+                    </span>
+
+                    <h3 class="font-bold text-cPrimary text-base mt-1 mb-3">
+                      Setelah mengikuti rangkaian refleksi pengalaman belajar,
+                      menurut Anda, bagaimana seharusnya pendidikan di
+                      Indonesia?
+                    </h3>
+
+                    <p
+                      class="text-sm text-gray-600 leading-relaxed text-justify"
+                    >
+                      Menurut saya, pendidikan di Indonesia seharusnya
+                      diselenggarakan secara merata, inklusif, dan relevan
+                      dengan perkembangan zaman, sehingga setiap peserta didik
+                      memiliki kesempatan untuk memperoleh pendidikan
+                      berkualitas tanpa memandang latar belakang maupun tempat
+                      tinggalnya. Pendidikan tidak hanya berorientasi pada
+                      pencapaian akademik, tetapi juga perlu mengembangkan
+                      kemampuan berpikir kritis, kreativitas, pemecahan masalah,
+                      karakter, dan literasi teknologi. Berdasarkan refleksi
+                      selama mengikuti PPG, saya semakin memahami bahwa
+                      pembelajaran harus berpusat pada peserta didik,
+                      memperhatikan karakteristik dan kebutuhannya, serta
+                      dirancang secara berkesadaran, bermakna, dan
+                      menggembirakan. Teknologi perlu dimanfaatkan sebagai
+                      sarana untuk mendukung pembelajaran, bukan sekadar
+                      formalitas, dengan tetap menjunjung tinggi nilai-nilai
+                      karakter dan kearifan lokal. Oleh karena itu, pendidikan
+                      Indonesia perlu terus berkembang secara adaptif agar mampu
+                      mempersiapkan generasi yang kompeten, berkarakter, dan
+                      siap menghadapi tantangan masa depan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- POIN REFLEKSI 02 -->
+              <div
+                class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-br from-cSecondary to-blue-700 text-white shadow-md shadow-cSecondary/30 flex items-center justify-center flex-shrink-0 font-bold text-sm tracking-wider border-b-2 border-blue-900"
+                  >
+                    02
+                  </div>
+
+                  <div class="flex-1">
+                    <span
+                      class="text-[10px] font-bold text-cSecondary uppercase tracking-wider"
+                    >
+                      Refleksi Profesionalisme Guru
+                    </span>
+
+                    <h3 class="font-bold text-cPrimary text-base mt-1 mb-3">
+                      Apa saja yang dapat Anda lakukan untuk menjadi guru
+                      profesional?
+                    </h3>
+
+                    <p
+                      class="text-sm text-gray-600 leading-relaxed text-justify"
+                    >
+                      Untuk menjadi guru profesional, saya perlu mengembangkan
+                      kompetensi pedagogik, profesional, sosial, dan
+                      kepribadian. Sebagai calon guru Informatika, saya akan
+                      berusaha memahami karakteristik dan kebutuhan peserta
+                      didik, merancang pembelajaran yang berpusat pada murid,
+                      serta menyelaraskan tujuan, kegiatan, dan asesmen. Saya
+                      juga akan memanfaatkan teknologi secara tepat untuk
+                      mengembangkan kemampuan berpikir komputasional, menjunjung
+                      tinggi etika profesi, serta membangun komunikasi dan
+                      empati. Selain itu, saya berkomitmen untuk terus belajar,
+                      terbuka terhadap masukan dari dosen dan guru senior, serta
+                      melakukan evaluasi dan refleksi secara berkelanjutan guna
+                      meningkatkan kualitas pembelajaran.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- RENCANA TINDAK LANJUT -->
+            <!-- ====================================== -->
+
+            <div class="lg:col-span-12 space-y-6 mt-4">
+              <!-- Section Heading -->
+              <div>
+                <h2
+                  class="text-xl font-bold text-cPrimary mb-2 flex items-center"
+                >
+                  <i class="fas fa-route text-cAccent mr-3"></i>
+                  Rencana Tindak Lanjut
+                </h2>
+
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Komitmen dan langkah nyata yang akan saya lakukan untuk
+                  mengembangkan kompetensi serta membangun karier sebagai guru
+                  profesional.
+                </p>
+              </div>
+
+              <!-- PERTANYAAN UTAMA -->
+              <div
+                class="bg-cPrimary/5 border border-cSecondary/10 rounded-2xl p-5"
+              >
+                <div class="flex items-start gap-3">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-cSecondary/10 text-cSecondary flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-bullseye"></i>
+                  </div>
+
+                  <div>
+                    <span
+                      class="text-[10px] font-bold text-cAccent uppercase tracking-wider"
+                    >
+                      Pertanyaan Pemantik
+                    </span>
+
+                    <h3 class="font-bold text-cPrimary mt-1">
+                      Apa saja tiga hal penting yang akan Anda lakukan ketika
+                      memulai karier sebagai guru?
+                    </h3>
+
+                    <p class="text-sm text-gray-500 mt-2">
+                      Berikut tiga komitmen utama yang akan saya terapkan ketika
+                      memulai perjalanan karier sebagai seorang pendidik.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- GRID TIGA RENCANA -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- RENCANA 01 -->
+                <div
+                  class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                >
+                  <div class="flex items-center justify-between mb-4">
+                    <div
+                      class="w-11 h-11 rounded-xl bg-cAccent/10 text-cAccent flex items-center justify-center"
+                    >
+                      <i class="fas fa-book-open text-lg"></i>
+                    </div>
+
+                    <span class="px-3 py-1 bg-cAccent/10 text-cAccent font-extrabold text-base rounded-xl border border-cAccent/20 shadow-sm">01</span>
+                  </div>
+
+                  <h3 class="font-bold text-cPrimary mb-3">
+                    Mengembangkan Kompetensi Diri
+                  </h3>
+
+                  <p class="text-sm text-gray-600 leading-relaxed text-justify">
+                    Saya akan terus belajar melalui pelatihan, mempelajari
+                    strategi pembelajaran, serta meminta masukan dari guru
+                    senior dan rekan sejawat untuk meningkatkan kemampuan
+                    mengajar.
+                  </p>
+                </div>
+
+                <!-- RENCANA 02 -->
+                <div
+                  class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                >
+                  <div class="flex items-center justify-between mb-4">
+                    <div
+                      class="w-11 h-11 rounded-xl bg-cSecondary/10 text-cSecondary flex items-center justify-center"
+                    >
+                      <i class="fas fa-users text-lg"></i>
+                    </div>
+
+                    <span class="px-3 py-1 bg-cSecondary/10 text-cSecondary font-extrabold text-base rounded-xl border border-cSecondary/20 shadow-sm">02</span>
+                  </div>
+
+                  <h3 class="font-bold text-cPrimary mb-3">
+                    Memahami Kebutuhan Peserta Didik
+                  </h3>
+
+                  <p class="text-sm text-gray-600 leading-relaxed text-justify">
+                    Saya akan mengenali karakteristik, minat, dan kemampuan
+                    murid melalui observasi dan asesmen, kemudian merancang
+                    pembelajaran yang berpusat pada murid, kontekstual, dan
+                    bermakna, khususnya dalam mengembangkan kemampuan berpikir
+                    komputasional.
+                  </p>
+                </div>
+
+                <!-- RENCANA 03 -->
+                <div
+                  class="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cAccent transition-all"
+                >
+                  <div class="flex items-center justify-between mb-4">
+                    <div
+                      class="w-11 h-11 rounded-xl bg-cAccent/10 text-cAccent flex items-center justify-center"
+                    >
+                      <i class="fas fa-sync-alt text-lg"></i>
+                    </div>
+
+                    <span class="px-3 py-1 bg-cAccent/10 text-cAccent font-extrabold text-base rounded-xl border border-cAccent/20 shadow-sm">03</span>
+                  </div>
+
+                  <h3 class="font-bold text-cPrimary mb-3">
+                    Melakukan Refleksi Berkelanjutan
+                  </h3>
+
+                  <p class="text-sm text-gray-600 leading-relaxed text-justify">
+                    Saya akan mengevaluasi proses dan hasil pembelajaran,
+                    menerima kritik, serta memperbaiki strategi mengajar dan
+                    mengembangkan komunikasi, empati, serta manajemen kelas
+                    untuk menciptakan lingkungan belajar yang positif dan
+                    mendukung perkembangan murid.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pesan untuk diri -->
+            <div
+              class="lg:col-span-12 bg-cPrimary text-white p-8 rounded-2xl shadow-xl relative overflow-hidden"
+            >
+              <i
+                class="fas fa-quote-right absolute -right-4 -bottom-4 text-7xl text-white/10"
+              ></i>
+              <h3 class="text-lg font-bold mb-2 text-cAccent">
+                Pesan untuk Diri Sendiri
+              </h3>
+              <p class="text-sm sm:text-base italic font-light leading-relaxed">
+                "Proses ini mungkin melelahkan, tapi percayalah setiap tetes
+                keringat dan perjuangan hari ini adalah investasi untuk senyum
+                pemahaman ribuan peserta didik di masa depan. Teruslah menjadi
+                pembelajar sepanjang hayat."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      id="footer"
+      class="relative bg-gradient-to-b from-[#0B1E3B] to-cPrimary text-white py-5 mt-auto border-t border-white/10 shadow-2xl overflow-hidden"
+    >
+      <!-- Glowing Accent Divider Top -->
+      <div class="absolute top-0 inset-x-0 h-[2px] glow-divider"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-xs sm:text-sm"
+        >
+          <!-- 1 Baris: Copyright + Social Link -->
+          <div
+            class="flex items-center gap-3 text-gray-300 flex-wrap justify-center"
+          >
+            <p>
+              &copy; Copyright
+              <strong class="text-white font-semibold tracking-wide"
+                >Fyora</strong
+              >. All Rights Reserved
+            </p>
+            <span class="text-gray-500">•</span>
+            <a
+              href="https://www.instagram.com/farrosfira/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn-ig w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center text-xs shadow-sm"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <!-- Credits -->
+          <div class="text-gray-400 text-xs">
+            Designed by
+            <span
+              class="text-gray-200 font-medium hover:text-cAccent transition-colors"
+              >Fyora</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-cAccent text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-green-700 z-50 transform hover:-translate-y-1"
+      aria-label="Kembali ke atas"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

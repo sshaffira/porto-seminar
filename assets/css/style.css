@@ -1,0 +1,218 @@
+/* ==========================================================================
+   E-PORTOFOLIO CUSTOM STYLES
+   Author: Farros Shaffira - PPG Prajabatan Informatika
+   ========================================================================== */
+
+body {
+    background-color: #F7FAF9;
+    color: #1E293B;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    font-family: 'Raleway', sans-serif; 
+}
+
+.nav-link, .btn { 
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* Fade In Animation on Scroll */
+.fade-in { 
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+
+.fade-in.visible { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Page Transition */
+.page-section { 
+    animation: fadeInPage 0.5s ease-in-out; 
+}
+
+@keyframes fadeInPage { 
+    from { 
+        opacity: 0; 
+        transform: scale(0.98); 
+    } 
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    } 
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { 
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track { 
+    background: #F7FAF9; 
+}
+
+::-webkit-scrollbar-thumb { 
+    background: #1E4C8A; 
+    border-radius: 4px; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background: #0F2A52; 
+}
+
+/* Typing Cursor Effect */
+.typing-cursor::after { 
+    content: '|'; 
+    display: inline-block;
+    margin-left: 2px;
+    color: #4C9A6E; 
+    animation: blink 0.7s infinite; 
+}
+
+@keyframes blink { 
+    0%, 50% { 
+        opacity: 1; 
+    } 
+    51%, 100% { 
+        opacity: 0; 
+    } 
+}
+
+/* Vertical Timeline Line for Refleksi */
+.timeline-container::before {
+    content: ''; 
+    position: absolute; 
+    left: 24px; 
+    top: 0; 
+    bottom: 0; 
+    width: 2px; 
+    background: #1E4C8A;
+}
+
+/* ==========================================================================
+   Ciamik Effects: Navbar & Footer
+   ========================================================================== */
+
+/* Navbar Glassmorphism */
+.navbar-glass {
+    background: rgba(15, 42, 82, 0.90);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-glass.scrolled {
+    background: rgba(10, 26, 51, 0.96);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Glowing Divider Line */
+.glow-divider {
+    background: linear-gradient(90deg, transparent 0%, rgba(76, 154, 110, 0.85) 50%, transparent 100%);
+    box-shadow: 0 0 10px rgba(76, 154, 110, 0.45);
+}
+
+/* Interactive Nav Link Hover with Center-out Expanding Glow Line */
+.nav-link-modern {
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link-modern::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #4C9A6E;
+    border-radius: 9999px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px rgba(76, 154, 110, 0.7);
+}
+
+.nav-link-modern:hover::after,
+.nav-link-modern.active-link::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Logo Brand Glow Effect */
+.navbar-brand-logo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-brand-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(76, 154, 110, 0.4));
+}
+
+/* Instagram Social Button Glow & Gradient */
+.social-btn-ig {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn-ig:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.45);
+    transform: translateY(-2px) scale(1.08);
+}
+
+/* ==========================================================================
+   Floating Badges on Profile Photo
+   ========================================================================== */
+
+@keyframes floatBadge1 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+}
+
+@keyframes floatBadge2 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(7px); }
+}
+
+@keyframes floatBadge3 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+.float-badge-1 {
+    animation: floatBadge1 3.6s ease-in-out infinite;
+}
+
+.float-badge-2 {
+    animation: floatBadge2 4.2s ease-in-out infinite 0.4s;
+}
+
+.float-badge-3 {
+    animation: floatBadge3 3.8s ease-in-out infinite 0.8s;
+}
+
+/* Ambient Aura Glow Pulse */
+@keyframes auraPulse1 {
+    0%, 100% { transform: scale(1) translate(6px, 6px); opacity: 0.65; }
+    50% { transform: scale(1.08) translate(-4px, -4px); opacity: 0.9; }
+}
+
+@keyframes auraPulse2 {
+    0%, 100% { transform: scale(1) translate(-6px, 8px); opacity: 0.55; }
+    50% { transform: scale(1.06) translate(6px, -4px); opacity: 0.85; }
+}
+
+.aura-glow-1 {
+    animation: auraPulse1 6s ease-in-out infinite;
+}
+
+.aura-glow-2 {
+    animation: auraPulse2 7s ease-in-out infinite reverse;
+}
+
+
+
+

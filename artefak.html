@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefak | Farros Shaffira</title>
+    
+    <!-- Fonts: Roboto, Poppins, Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cText: '#1E293B',       /* Body copy */
+                        cBg: '#F7FAF9',         /* Background */
+                        cPrimary: '#0F2A52',    /* Navbar, Headings */
+                        cSecondary: '#1E4C8A',  /* Borders, Icons, Hover */
+                        cAccent: '#4C9A6E',     /* Buttons, Badges */
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif'],
+                        raleway: ['Raleway', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <nav class="fixed w-full z-50 navbar-glass border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center navbar-brand-logo">
+                    <img src="assets/img/logo navbar3.png" alt="Logo E-Portofolio" class="h-10 sm:h-12 w-auto object-contain">
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">Home</a>
+                    <a href="about.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">About</a>
+                    <a href="portofolio.html" class="nav-link-modern active-link text-cAccent font-semibold px-1 py-2">Artefak</a>
+                    <a href="refleksi.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">Refleksi</a>
+                    <a href="karyainovasi.html" class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2">Inovasi</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-cAccent p-2 rounded-lg transition-colors focus:outline-none" aria-label="Buka Menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glowing Divider Line -->
+        <div class="h-[2px] w-full glow-divider"></div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cPrimary/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl transition-all duration-300">
+            <div class="px-4 pt-3 pb-4 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">About</a>
+                <a href="portofolio.html" class="block px-3 py-2 text-base font-semibold text-white bg-cAccent/20 border-l-4 border-cAccent rounded-r-md">Artefak</a>
+                <a href="refleksi.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">Refleksi</a>
+                <a href="karyainovasi.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors">Karya Inovasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="pt-20 flex-grow">
+        
+        <!-- SECTION 1: DAFTAR MATA KULIAH -->
+        <section id="section-courses" class="page-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+                
+                <!-- Navigasi Balik & Switcher Semester -->
+                <div class="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-6 fade-in">
+                    <div>
+                        <!-- <a href="portofolio.html" class="text-cSecondary hover:text-cAccent font-medium mb-3 inline-flex items-center text-sm">
+                            <i class="fas fa-arrow-left mr-2"></i>Kembali ke Pilihan Semester
+                        </a> -->
+                        <h1 id="artefak-title" class="text-3xl sm:text-4xl font-bold text-cPrimary">Artefak Perkuliahan</h1>
+                        <p id="semester-desc" class="text-gray-500 mt-2 text-sm sm:text-base max-w-2xl"></p>
+                    </div>
+
+                    <!-- Quick Tab Switcher -->
+                    <div class="flex items-center space-x-3 bg-gray-100 p-1.5 rounded-2xl self-start md:self-auto border border-gray-200 shadow-inner">
+                        <button id="tab-sem1" onclick="switchSemester('sem1')" class="px-6 py-2.5 rounded-xl font-semibold text-sm transition-all">
+                            Semester 1
+                        </button>
+                        <button id="tab-sem2" onclick="switchSemester('sem2')" class="px-6 py-2.5 rounded-xl font-semibold text-sm transition-all">
+                            Semester 2
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grid Mata Kuliah Dinamis (Dikelola oleh main.js) -->
+                <div id="course-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+                    <!-- Javascript populates this -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 2: RINCIAN TOPIK & ARTEFAK MATA KULIAH -->
+        <section id="section-detail" class="page-section hidden bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+                
+                <!-- Tombol Kembali ke Grid -->
+                <!-- <button onclick="showCoursesView()" class="group flex items-center text-cSecondary hover:text-cAccent mb-8 font-medium transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-cBg border border-gray-200 flex items-center justify-center mr-3 group-hover:border-cAccent shadow-sm transition-all">
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                    <span>Kembali ke Daftar Mata Kuliah</span>
+                </button> -->
+                
+                <!-- Box Header Mata Kuliah -->
+                <div class="bg-cBg p-6 sm:p-10 rounded-3xl shadow-sm border border-gray-200 fade-in">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8 border-b border-gray-200 pb-8">
+                        <div class="w-20 h-20 bg-cSecondary rounded-2xl flex items-center justify-center text-white shadow-inner flex-shrink-0">
+                            <i id="detail-course-icon" class="fas fa-book text-3xl"></i>
+                        </div>
+                        <div>
+                            <span id="detail-semester-badge" class="bg-cAccent/10 text-cAccent px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">Semester</span>
+                            <h2 id="detail-course-title" class="text-2xl sm:text-3xl font-bold text-cPrimary leading-tight">Nama Mata Kuliah</h2>
+                            <p class="text-gray-500 text-sm mt-1">Daftar artefak, tugas kajian, dan perangkat pembelajaran.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Accordion Rincian Topik -->
+                    <div>
+                        <h3 class="text-xl font-bold text-cPrimary mb-6 flex items-center">
+                            <i class="fas fa-list-ul text-cAccent mr-3"></i> Topik Perkuliahan & Dokumen Artefak
+                        </h3>
+                        <div id="detail-topics-list" class="space-y-4">
+                            <!-- Javascript populates accordion -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="relative bg-gradient-to-b from-[#0B1E3B] to-cPrimary text-white py-5 mt-auto border-t border-white/10 shadow-2xl overflow-hidden">
+        <!-- Glowing Accent Divider Top -->
+        <div class="absolute top-0 inset-x-0 h-[2px] glow-divider"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-xs sm:text-sm">
+                
+                <!-- 1 Baris: Copyright + Social Link -->
+                <div class="flex items-center gap-3 text-gray-300 flex-wrap justify-center">
+                    <p>&copy; Copyright <strong class="text-white font-semibold tracking-wide">Fyora</strong>. All Rights Reserved</p>
+                    <span class="text-gray-500">•</span>
+                    <a href="https://www.instagram.com/farrosfira/" target="_blank" rel="noopener noreferrer" class="social-btn-ig w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center text-xs shadow-sm" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+
+                <!-- Credits -->
+                <div class="text-gray-400 text-xs">
+                    Designed by <span class="text-gray-200 font-medium hover:text-cAccent transition-colors">Fyora</span>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-cAccent text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-green-700 z-50 transform hover:-translate-y-1" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Farros Shaffira</title>
+
+    <!-- Fonts: Roboto, Poppins, Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cText: "#1E293B" /* Body copy */,
+              cBg: "#F7FAF9" /* Background */,
+              cPrimary: "#0F2A52" /* Navbar, Headings */,
+              cSecondary: "#1E4C8A" /* Borders, Icons, Hover */,
+              cAccent: "#4C9A6E" /* Buttons, Badges */,
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              roboto: ["Roboto", "sans-serif"],
+              raleway: ["Raleway", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="antialiased flex flex-col min-h-screen">
+    <!-- Header / Navbar -->
+    <nav
+      class="fixed w-full z-50 navbar-glass border-b border-white/10 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <a
+            href="index.html"
+            class="flex-shrink-0 flex items-center navbar-brand-logo"
+          >
+            <img
+              src="assets/img/logo navbar3.png"
+              alt="Logo E-Portofolio"
+              class="h-10 sm:h-12 w-auto object-contain"
+            />
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              href="index.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="nav-link-modern active-link text-cAccent font-semibold px-1 py-2"
+              >About</a
+            >
+            <a
+              href="portofolio.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >Artefak</a
+            >
+            <a
+              href="refleksi.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >Refleksi</a
+            >
+            <a
+              href="karyainovasi.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+              >Inovasi</a
+            >
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-white hover:text-cAccent p-2 rounded-lg transition-colors focus:outline-none"
+              aria-label="Buka Menu"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glowing Divider Line -->
+      <div class="h-[2px] w-full glow-divider"></div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-cPrimary/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl transition-all duration-300"
+      >
+        <div class="px-4 pt-3 pb-4 space-y-2">
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block px-3 py-2 text-base font-semibold text-white bg-cAccent/20 border-l-4 border-cAccent rounded-r-md"
+            >About</a
+          >
+          <a
+            href="portofolio.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >Artefak</a
+          >
+          <a
+            href="refleksi.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >Refleksi</a
+          >
+          <a
+            href="karyainovasi.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+            >Karya Inovasi</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 flex-grow bg-white">
+      <section id="about" class="page-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <!-- Section Header -->
+          <div class="text-center mb-16 fade-in">
+            <h1 class="text-3xl sm:text-4xl font-bold text-cPrimary mb-2">
+              Tentang Saya
+            </h1>
+            <p class="text-gray-500 max-w-xl mx-auto">
+              Mengenal profil, motivasi, dan filosofi pendidikan yang saya
+              emban.
+            </p>
+            <div class="w-20 h-1 bg-cAccent mx-auto rounded-full mt-4"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Left Col: Photo & Fun Facts -->
+            <div class="lg:col-span-1 space-y-8 fade-in">
+              <!-- Profile Card -->
+              <!-- Profile Card -->
+              <div
+                class="relative overflow-hidden bg-cBg rounded-2xl border border-gray-100 shadow-sm"
+              >
+                <!-- Decorative Background -->
+                <div
+                  class="absolute -top-16 -right-16 w-36 h-36 rounded-full bg-cAccent/5"
+                ></div>
+
+                <div
+                  class="absolute -bottom-20 -left-16 w-40 h-40 rounded-full bg-cSecondary/5"
+                ></div>
+
+                <div class="relative p-6 text-center">
+                  <!-- Label -->
+                  <div class="flex justify-center mb-5">
+                    <span
+                      class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-100 shadow-sm text-[10px] uppercase tracking-[0.15em] font-semibold text-cSecondary"
+                    >
+                      <span class="w-1.5 h-1.5 rounded-full bg-cAccent"></span>
+                      Profil
+                    </span>
+                  </div>
+
+                  <!-- Foto -->
+                  <div class="relative w-44 h-44 mx-auto mb-5">
+                    <!-- Outer Accent Ring -->
+                    <div
+                      class="absolute inset-0 rounded-full border-2 border-cAccent/30 scale-105"
+                    ></div>
+
+                    <!-- Photo -->
+                    <div
+                      class="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg bg-gray-100"
+                    >
+                      <img
+                        src="assets/img/pas foto.jpeg"
+                        alt="Profile Farros Shaffira"
+                        class="w-full h-full object-cover"
+                        style="object-position: center 20%"
+                      />
+                    </div>
+
+                    <!-- Status Dot -->
+                    <div
+                      class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center"
+                    >
+                      <span
+                        class="w-3 h-3 rounded-full bg-cAccent"
+                        title="Calon Guru"
+                      ></span>
+                    </div>
+                  </div>
+
+                  <!-- Nama -->
+                  <h2
+                    class="font-poppins font-bold text-xl text-cPrimary tracking-tight"
+                  >
+                    Farros Shaffira
+                  </h2>
+
+                  <!-- Role -->
+                  <div class="flex justify-center mt-2 mb-5">
+                    <span
+                      class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-cSecondary/5 text-cSecondary text-xs font-medium border border-cSecondary/10"
+                    >
+                      <i class="fas fa-chalkboard-teacher text-[11px]"></i>
+                      Calon Guru Profesional
+                    </span>
+                  </div>
+
+                  <!-- Divider -->
+                  <div class="flex items-center justify-center gap-2 mb-4">
+                    <span class="w-8 h-px bg-gray-200"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-cAccent"></span>
+                    <span class="w-8 h-px bg-gray-200"></span>
+                  </div>
+
+                  <!-- Location -->
+                  <div
+                    class="inline-flex items-center justify-center gap-2 text-xs text-gray-500"
+                  >
+                    <i class="fas fa-location-dot text-cAccent"></i>
+                    <span>Tuban, Jawa Timur</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Keunikan Tuban -->
+              <div
+                class="relative overflow-hidden bg-cPrimary text-white rounded-2xl shadow-xl"
+              >
+                <!-- Decorative Glow -->
+                <div
+                  class="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-cAccent/10 blur-2xl"
+                ></div>
+
+                <div
+                  class="absolute -bottom-20 -left-20 w-44 h-44 rounded-full bg-cSecondary/20 blur-3xl"
+                ></div>
+
+                <!-- Keunikan Kabupaten Tuban -->
+                <div
+                  class="relative bg-cBg rounded-2xl p-6 shadow-sm border border-gray-100 overflow-hidden"
+                >
+                  <!-- Aksen dekoratif -->
+                  <div
+                    class="absolute top-0 right-0 w-24 h-24 bg-cAccent/5 rounded-bl-full"
+                  ></div>
+
+                  <!-- Header -->
+                  <div class="relative mb-5">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 rounded-xl bg-cAccent/10 flex items-center justify-center flex-shrink-0"
+                      >
+                        <i class="fas fa-map-marker-alt text-cAccent"></i>
+                      </div>
+
+                      <div>
+                        <p
+                          class="text-[9px] uppercase tracking-[0.18em] text-cAccent font-semibold"
+                        >
+                          Mengenal Asal
+                        </p>
+
+                        <h3
+                          class="font-poppins font-semibold text-lg text-cPrimary"
+                        >
+                          Keunikan Tuban
+                        </h3>
+                      </div>
+                    </div>
+
+                    <p class="text-xs text-gray-500 leading-relaxed mt-3">
+                      Beberapa kekayaan rasa dan tradisi yang menjadi bagian
+                      dari identitas Kabupaten Tuban.
+                    </p>
+                  </div>
+
+                  <!-- Daftar Keunikan -->
+                  <div class="space-y-3">
+                    <!-- Siwalan -->
+                    <div
+                      class="group flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 hover:border-cAccent/30 hover:shadow-sm transition-all duration-300"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-xl overflow-hidden bg-cAccent/10 flex-shrink-0"
+                      >
+                        <img
+                          src="assets/img/siwalan.jpg"
+                          alt="Siwalan Tuban"
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onerror="this.style.display = 'none'"
+                        />
+
+                        <div
+                          class="w-full h-full flex items-center justify-center text-cAccent"
+                        >
+                          <i class="fas fa-seedling"></i>
+                        </div>
+                      </div>
+
+                      <div class="min-w-0">
+                        <h4 class="font-semibold text-sm text-cPrimary mb-1">
+                          Siwalan
+                        </h4>
+
+                        <p class="text-[11px] text-gray-500 leading-relaxed">
+                          Buah khas Tuban yang manis dan menyegarkan, dengan
+                          daging mirip kolang-kaling.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Legen -->
+                    <div
+                      class="group flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 hover:border-cAccent/30 hover:shadow-sm transition-all duration-300"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-xl overflow-hidden bg-cSecondary/10 flex-shrink-0"
+                      >
+                        <img
+                          src="assets/img/legen.jpg"
+                          alt="Legen Tuban"
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onerror="this.style.display = 'none'"
+                        />
+
+                        <div
+                          class="w-full h-full flex items-center justify-center text-cSecondary"
+                        >
+                          <i class="fas fa-glass-water"></i>
+                        </div>
+                      </div>
+
+                      <div class="min-w-0">
+                        <h4 class="font-semibold text-sm text-cPrimary mb-1">
+                          Legen
+                        </h4>
+
+                        <p class="text-[11px] text-gray-500 leading-relaxed">
+                          Minuman tradisional dari nira pohon siwalan dengan
+                          rasa manis alami dan menyegarkan.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Ampo -->
+                    <div
+                      class="group flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 hover:border-cAccent/30 hover:shadow-sm transition-all duration-300"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-xl overflow-hidden bg-cAccent/10 flex-shrink-0"
+                      >
+                        <img
+                          src="assets/img/ampo.jpg"
+                          alt="Ampo Tuban"
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onerror="this.style.display = 'none'"
+                        />
+
+                        <div
+                          class="w-full h-full flex items-center justify-center text-cAccent"
+                        >
+                          <i class="fas fa-mortar-pestle"></i>
+                        </div>
+                      </div>
+
+                      <div class="min-w-0">
+                        <h4 class="font-semibold text-sm text-cPrimary mb-1">
+                          Ampo
+                        </h4>
+
+                        <p class="text-[11px] text-gray-500 leading-relaxed">
+                          Makanan tradisional yang terbuat dari tanah liat murni
+                          dan diolah secara tradisional.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Kare Rajungan -->
+                    <div
+                      class="group flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 hover:border-cAccent/30 hover:shadow-sm transition-all duration-300"
+                    >
+                      <div
+                        class="w-14 h-14 rounded-xl overflow-hidden bg-cSecondary/10 flex-shrink-0"
+                      >
+                        <img
+                          src="assets/img/kare rajungan.jpg"
+                          alt="Kare Rajungan Tuban"
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          onerror="this.style.display = 'none'"
+                        />
+
+                        <div
+                          class="w-full h-full flex items-center justify-center text-cSecondary"
+                        >
+                          <i class="fas fa-utensils"></i>
+                        </div>
+                      </div>
+
+                      <div class="min-w-0">
+                        <h4 class="font-semibold text-sm text-cPrimary mb-1">
+                          Kare Rajungan
+                        </h4>
+
+                        <p class="text-[11px] text-gray-500 leading-relaxed">
+                          Kuliner seafood khas Tuban dengan cita rasa gurih dan
+                          kaya rempah.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Col: Descriptions -->
+            <div class="lg:col-span-2 space-y-8 fade-in">
+              <div>
+                <h3 class="text-2xl font-bold text-cPrimary mb-4">
+                  Deskripsi Diri
+                </h3>
+                <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                  Mahasiswa PPG Calon Guru Informatika dan lulusan S1 Teknik
+                  Informatika yang berfokus pada teknologi pendidikan dan
+                  pengembangan media pembelajaran digital. Berasal dari Tuban,
+                  Jawa Timur, dengan semangat menjadi pendidik inovatif dan
+                  adaptif di era digital.
+                </p>
+              </div>
+
+              <!-- Motivasi & Visi -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <!-- Motivasi -->
+                <div
+                  class="group relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <!-- Accent Top -->
+                  <div class="h-1 w-full bg-cAccent"></div>
+
+                  <div class="p-6">
+                    <!-- Icon & Label -->
+                    <div class="flex items-center justify-between mb-5">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cAccent/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <i class="fas fa-lightbulb text-cAccent"></i>
+                      </div>
+
+                      <span
+                        class="text-[10px] uppercase tracking-[0.15em] font-semibold text-cAccent"
+                      >
+                        Motivasi
+                      </span>
+                    </div>
+
+                    <!-- Title -->
+                    <h4
+                      class="font-poppins font-semibold text-cPrimary text-base leading-snug mb-3"
+                    >
+                      Motivasi dan Inspirasi Menjadi Guru
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                      Terinspirasi pemikiran Ki Hadjar Dewantara dan perjuangan
+                      orang tua, saya memilih menjadi guru untuk terus belajar,
+                      berbagi, dan memberikan inspirasi bagi generasi masa
+                      depan.
+                    </p>
+
+                    <!-- Bottom Accent -->
+                    <div
+                      class="mt-5 flex items-center gap-2 text-[10px] text-gray-400"
+                    >
+                      <span class="w-6 h-px bg-cAccent"></span>
+                      <span>Nilai & Inspirasi</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tujuan -->
+                <div
+                  class="group relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <!-- Accent Top -->
+                  <div class="h-1 w-full bg-cAccent"></div>
+
+                  <div class="p-6">
+                    <!-- Icon & Label -->
+                    <div class="flex items-center justify-between mb-5">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cAccent/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <i class="fas fa-graduation-cap text-cAccent"></i>
+                      </div>
+
+                      <span
+                        class="text-[10px] uppercase tracking-[0.15em] font-semibold text-cAccent"
+                      >
+                        Tujuan
+                      </span>
+                    </div>
+
+                    <!-- Title -->
+                    <h4
+                      class="font-poppins font-semibold text-cPrimary text-base leading-snug mb-3"
+                    >
+                      Tujuan Menjadi Guru Profesional
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                      Menjadi guru profesional yang menghadirkan pembelajaran
+                      berkualitas, inovatif, dan adaptif terhadap teknologi,
+                      sekaligus membimbing peserta didik mengembangkan potensi,
+                      karakter, dan keterampilan untuk masa depan.
+                    </p>
+
+                    <!-- Bottom Accent -->
+                    <div
+                      class="mt-5 flex items-center gap-2 text-[10px] text-gray-400"
+                    >
+                      <span class="w-6 h-px bg-cAccent"></span>
+                      <span>Profesionalisme</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visi Pendidikan Indonesia -->
+                <div
+                  class="group relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <!-- Accent Top -->
+                  <div class="h-1 w-full bg-cSecondary"></div>
+
+                  <div class="p-6">
+                    <!-- Icon & Label -->
+                    <div class="flex items-center justify-between mb-5">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cSecondary/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <i class="fas fa-globe-asia text-cSecondary"></i>
+                      </div>
+
+                      <span
+                        class="text-[10px] uppercase tracking-[0.15em] font-semibold text-cSecondary"
+                      >
+                        Visi
+                      </span>
+                    </div>
+
+                    <!-- Title -->
+                    <h4
+                      class="font-poppins font-semibold text-cPrimary text-base leading-snug mb-3"
+                    >
+                      Visi Pendidikan di Indonesia
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                      Mendorong pendidikan yang merata dan adaptif, dengan
+                      memanfaatkan teknologi untuk menghadirkan pembelajaran
+                      berkualitas yang membentuk generasi kritis, berkarakter,
+                      dan tetap berakar pada kearifan lokal.
+                    </p>
+
+                    <!-- Bottom Accent -->
+                    <div
+                      class="mt-5 flex items-center gap-2 text-[10px] text-gray-400"
+                    >
+                      <span class="w-6 h-px bg-cSecondary"></span>
+                      <span>Pendidikan Indonesia</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visi Sebagai Calon Guru -->
+                <div
+                  class="group relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <!-- Accent Top -->
+                  <div class="h-1 w-full bg-cSecondary"></div>
+
+                  <div class="p-6">
+                    <!-- Icon & Label -->
+                    <div class="flex items-center justify-between mb-5">
+                      <div
+                        class="w-11 h-11 rounded-xl bg-cSecondary/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <i
+                          class="fas fa-chalkboard-teacher text-cSecondary"
+                        ></i>
+                      </div>
+
+                      <span
+                        class="text-[10px] uppercase tracking-[0.15em] font-semibold text-cSecondary"
+                      >
+                        Visi Pribadi
+                      </span>
+                    </div>
+
+                    <!-- Title -->
+                    <h4
+                      class="font-poppins font-semibold text-cPrimary text-base leading-snug mb-3"
+                    >
+                      Visi Sebagai Calon Guru
+                    </h4>
+
+                    <!-- Description -->
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                      Menjadi guru Informatika yang menjembatani teknologi dan
+                      pendidikan, serta membimbing peserta didik berpikir logis,
+                      kreatif, dan adaptif melalui computational thinking. Saya
+                      berkomitmen untuk terus belajar, terbuka terhadap masukan,
+                      dan membangun pembelajaran yang dekat, inspiratif, serta
+                      mendorong keberanian untuk mencoba.
+                    </p>
+
+                    <!-- Bottom Accent -->
+                    <div
+                      class="mt-5 flex items-center gap-2 text-[10px] text-gray-400"
+                    >
+                      <span class="w-6 h-px bg-cSecondary"></span>
+                      <span>Komitmen Pendidik</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Langkah Mencapai Visi -->
+              <div>
+                <h3 class="text-xl font-bold text-cPrimary mb-4">
+                  Langkah Mencapai Visi
+                </h3>
+                <div class="flex flex-wrap gap-3">
+                  <span
+                    class="px-4 py-2.5 bg-cBg border border-gray-200 rounded-xl text-sm font-medium text-cText shadow-sm flex items-center"
+                  >
+                    <i
+                      class="fas fa-chalkboard-teacher text-cSecondary mr-2"
+                    ></i>
+                    Belajar pedagogi secara bertahap
+                  </span>
+
+                  <span
+                    class="px-4 py-2.5 bg-cBg border border-gray-200 rounded-xl text-sm font-medium text-cText shadow-sm flex items-center"
+                  >
+                    <i class="fas fa-infinity text-cSecondary mr-2"></i>
+                    Lifelong Learning
+                  </span>
+                  <span
+                    class="px-4 py-2.5 bg-cBg border border-gray-200 rounded-xl text-sm font-medium text-cText shadow-sm flex items-center"
+                  >
+                    <i class="fas fa-user-friends text-cSecondary mr-2"></i>
+                    Mencari teman/mentor yang bisa mengarahkan
+                  </span>
+
+                  <span
+                    class="px-4 py-2.5 bg-cBg border border-gray-200 rounded-xl text-sm font-medium text-cText shadow-sm flex items-center"
+                  >
+                    <i class="fas fa-comments text-cSecondary mr-2"></i>
+                    Mengembangkan softskill dalam mengajar
+                  </span>
+                </div>
+              </div>
+
+              <!-- Quote -->
+              <div
+                class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cSecondary/10 via-cBg to-cAccent/5 border border-cSecondary/20 shadow-sm"
+              >
+                <!-- Dekorasi -->
+                <div
+                  class="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-cSecondary/10"
+                ></div>
+
+                <div
+                  class="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-cAccent/5"
+                ></div>
+
+                <blockquote class="relative px-7 py-7 sm:px-10 sm:py-9">
+                  <!-- Ikon Quote -->
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="flex-shrink-0 w-11 h-11 rounded-xl bg-cSecondary/10 flex items-center justify-center"
+                    >
+                      <i class="fas fa-quote-left text-cSecondary text-lg"></i>
+                    </div>
+
+                    <div class="flex-1">
+                      <p
+                        class="text-lg sm:text-xl font-semibold text-cPrimary leading-relaxed tracking-tight"
+                      >
+                        “Di balik setiap baris kode, ada ilmu yang membentuk
+                        masa depan.”
+                      </p>
+
+                      <!-- Garis aksen -->
+                      <div class="flex items-center gap-3 mt-5">
+                        <span
+                          class="w-10 h-1 rounded-full bg-cSecondary"
+                        ></span>
+                        <span
+                          class="text-xs font-medium uppercase tracking-widest text-gray-500"
+                        >
+                          Farros Shaffira
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      id="footer"
+      class="relative bg-gradient-to-b from-[#0B1E3B] to-cPrimary text-white py-5 mt-auto border-t border-white/10 shadow-2xl overflow-hidden"
+    >
+      <!-- Glowing Accent Divider Top -->
+      <div class="absolute top-0 inset-x-0 h-[2px] glow-divider"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-xs sm:text-sm"
+        >
+          <!-- 1 Baris: Copyright + Social Link -->
+          <div
+            class="flex items-center gap-3 text-gray-300 flex-wrap justify-center"
+          >
+            <p>
+              &copy; Copyright
+              <strong class="text-white font-semibold tracking-wide"
+                >Fyora</strong
+              >. All Rights Reserved
+            </p>
+            <span class="text-gray-500">•</span>
+            <a
+              href="https://www.instagram.com/farrosfira/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn-ig w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center text-xs shadow-sm"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <!-- Credits -->
+          <div class="text-gray-400 text-xs">
+            Designed by
+            <span
+              class="text-gray-200 font-medium hover:text-cAccent transition-colors"
+              >Fyora</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-cAccent text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-green-700 z-50 transform hover:-translate-y-1"
+      aria-label="Kembali ke atas"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

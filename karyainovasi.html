@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Karya Inovasi Mahasiswa | Farros Shaffira</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cText: "#1E293B",
+              cBg: "#F7FAF9",
+              cPrimary: "#0F2A52",
+              cSecondary: "#1E4C8A",
+              cAccent: "#4C9A6E",
+            },
+
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              roboto: ["Roboto", "sans-serif"],
+              raleway: ["Raleway", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <style>
+      /*
+      ==========================================
+      TAMBAHAN UNTUK GRAFIK
+      ==========================================
+      */
+
+      .chart-container {
+        position: relative;
+        width: 100%;
+        height: 320px;
+      }
+
+      /*
+      ==========================================
+      FOTO DOKUMENTASI
+      ==========================================
+      */
+
+      .documentation-image {
+        transition: transform 0.3s ease;
+      }
+
+      .documentation-card:hover .documentation-image {
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased flex flex-col min-h-screen">
+    <!-- =====================================================
+         HEADER / NAVBAR
+    ====================================================== -->
+
+    <nav
+      class="fixed w-full z-50 navbar-glass border-b border-white/10 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <!-- Logo -->
+          <a
+            href="index.html"
+            class="flex-shrink-0 flex items-center navbar-brand-logo"
+          >
+            <img
+              src="assets/img/logo navbar3.png"
+              alt="Logo E-Portofolio"
+              class="h-10 sm:h-12 w-auto object-contain"
+            />
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              href="index.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+            >
+              Home
+            </a>
+
+            <a
+              href="about.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+            >
+              About
+            </a>
+
+            <a
+              href="portofolio.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+            >
+              Artefak
+            </a>
+
+            <a
+              href="refleksi.html"
+              class="nav-link-modern text-gray-300 hover:text-white font-medium px-1 py-2"
+            >
+              Refleksi
+            </a>
+
+            <a
+              href="karyainovasi.html"
+              class="nav-link-modern active-link text-cAccent font-semibold px-1 py-2"
+            >
+              Inovasi
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-btn"
+              class="text-white hover:text-cAccent p-2 rounded-lg transition-colors focus:outline-none"
+              aria-label="Buka Menu"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Glowing Divider -->
+      <div class="h-[2px] w-full glow-divider"></div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-cPrimary/95 backdrop-blur-xl border-t border-white/10 absolute w-full shadow-2xl transition-all duration-300"
+      >
+        <div class="px-4 pt-3 pb-4 space-y-2">
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+          >
+            Home
+          </a>
+
+          <a
+            href="about.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+          >
+            About
+          </a>
+
+          <a
+            href="portofolio.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+          >
+            Artefak
+          </a>
+
+          <a
+            href="refleksi.html"
+            class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
+          >
+            Refleksi
+          </a>
+
+          <a
+            href="karyainovasi.html"
+            class="block px-3 py-2 text-base font-semibold text-white bg-cAccent/20 border-l-4 border-cAccent rounded-r-md"
+          >
+            Karya Inovasi
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="pt-20 flex-grow bg-white">
+      <section id="inovasi" class="page-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
+          <!-- =================================================
+               HEADER HALAMAN
+          ================================================== -->
+
+          <div class="text-center mb-16 fade-in">
+            <!-- LABEL -->
+
+            <span
+              class="bg-cAccent/10 text-cAccent px-4 py-1.5 rounded-full text-sm font-bold tracking-wider mb-6 inline-block"
+            >
+              KARYA INOVASI MAHASISWA
+            </span>
+
+            <!-- JUDUL -->
+
+            <h1 class="text-4xl md:text-6xl font-bold text-cPrimary mb-2">
+              DigiMath Card
+            </h1>
+
+            <!-- SUBJUDUL -->
+
+            <h3 class="text-lg md:text-2xl font-medium text-gray-500 mb-7">
+              Kartu Konversi Sistem Bilangan
+            </h3>
+
+            <!-- DESKRIPSI -->
+
+            <p
+              class="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed"
+            >
+              Media pembelajaran interaktif berbasis kartu untuk membantu murid
+              memahami konversi sistem bilangan desimal, biner, dan oktal
+              melalui aktivitas visual dan unplugged.
+            </p>
+          </div>
+
+          <!-- =================================================
+               MOCKUP / DEMO DIGIMATH
+          ================================================== -->
+
+          <div
+            class="w-full h-72 sm:h-96 md:h-[420px] bg-cBg rounded-3xl mb-16 overflow-hidden shadow-inner relative fade-in border border-gray-200 group"
+          >
+            <iframe
+              src="DigiMath_App/index.html"
+              title="Demo DigiMath Card"
+              class="w-full h-full border-0"
+              loading="lazy"
+            ></iframe>
+
+            <div class="absolute bottom-6 right-6 z-20">
+              <a
+                href="DigiMath_App/index.html"
+                rel="noopener noreferrer"
+                class="px-5 py-2.5 bg-cAccent hover:bg-green-700 text-white rounded-xl shadow-lg font-medium text-sm flex items-center gap-2 transition-all"
+              >
+                <i class="fas fa-play"></i>
+
+                Buka Demo Media
+              </a>
+            </div>
+          </div>
+
+          <!-- =================================================
+               CONTENT COLUMNS
+          ================================================== -->
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- =================================================
+                 KOLOM KIRI
+            ================================================== -->
+
+            <div class="space-y-8 fade-in">
+              <!-- LATAR BELAKANG -->
+
+              <div
+                class="bg-red-50 p-6 sm:p-8 rounded-3xl border border-red-100 relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-20 h-20 bg-red-100 rounded-bl-full flex items-start justify-end p-4"
+                >
+                  <i
+                    class="fas fa-exclamation-triangle text-red-500 text-lg"
+                  ></i>
+                </div>
+
+                <h2 class="font-bold text-red-800 text-2xl mb-3">
+                  Latar Belakang & Permasalahan
+                </h2>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="bg-white px-3 py-1 rounded-lg text-xs shadow-sm text-red-600 font-semibold border border-red-200"
+                  >
+                    Konsep Abstrak
+                  </span>
+
+                  <span
+                    class="bg-white px-3 py-1 rounded-lg text-xs shadow-sm text-red-600 font-semibold border border-red-200"
+                  >
+                    Konversi Bilangan
+                  </span>
+
+                  <span
+                    class="bg-white px-3 py-1 rounded-lg text-xs shadow-sm text-red-600 font-semibold border border-red-200"
+                  >
+                    Sulit Divisualisasikan
+                  </span>
+                </div>
+
+                <p class="text-base text-gray-700 leading-relaxed">
+                  Materi konversi sistem bilangan, khususnya desimal, biner, dan
+                  oktal, memerlukan pemahaman terhadap nilai tempat, aturan
+                  konversi, serta ketelitian dalam melakukan perhitungan. Oleh
+                  karena itu, dalam proses pembelajaran perlu memberikan
+                  kesempatan kepada murid untuk mempraktikkan langkah-langkah
+                  konversi secara langsung, memahami konsep yang dipelajari, dan
+                  menerapkannya dalam menyelesaikan soal latihan.
+                </p>
+
+                <p class="text-base text-gray-700 leading-relaxed mt-3">
+                  DigiMath Card digunakan sebagai media pembelajaran berbasis
+                  kartu yang memfasilitasi praktik konversi sistem bilangan
+                  secara lebih interaktif. Penerapan media ini bertujuan untuk
+                  meningkatkan keterlibatan murid dalam kegiatan latihan,
+                  membantu pemahaman konsep konversi pada tahap awal
+                  pembelajaran, serta mendukung pengerjaan Lembar Kerja Peserta
+                  Didik (LKPD).
+                </p>
+              </div>
+
+              <!-- IDE INOVASI -->
+
+              <div class="bg-cBg p-6 sm:p-8 rounded-3xl border border-gray-200">
+                <h2
+                  class="font-bold text-cPrimary text-2xl mb-4 flex items-center"
+                >
+                  <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+
+                  Ide Inovasi: "DigiMath Card"
+                </h2>
+
+                <p
+                  class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 text-justify"
+                >
+                  DigiMath Card dikembangkan sebagai media pembelajaran
+                  <strong>unplugged</strong> berbentuk permainan kartu untuk
+                  membantu murid memvisualisasikan, menyusun, membalik, dan
+                  mengelompokkan kartu proses konversi bilangan secara langsung.
+                </p>
+
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-cAccent mr-2 mt-1"></i>
+
+                    <span>
+                      <strong>12 Kartu:</strong> Set kartu memiliki nilai
+                      berbasis pangkat dua, mulai dari 1 hingga 2048.
+                    </span>
+                  </li>
+
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-cAccent mr-2 mt-1"></i>
+
+                    <span>
+                      <strong>Representasi Biner:</strong> Sisi depan kartu
+                      merepresentasikan angka <strong>1</strong>, sedangkan sisi
+                      belakang merepresentasikan angka <strong>0</strong>.
+                    </span>
+                  </li>
+
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-cAccent mr-2 mt-1"></i>
+
+                    <span>
+                      <strong>Representasi Oktal:</strong> Setiap digit oktal
+                      direpresentasikan melalui kelompok tiga kartu bernilai
+                      <strong>4, 2, dan 1</strong>.
+                    </span>
+                  </li>
+
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-cAccent mr-2 mt-1"></i>
+
+                    <span>
+                      <strong>Mencoba Langsung:</strong> Murid dapat menyusun,
+                      membalik, mengelompokkan, dan menghitung kartu untuk
+                      membangun representasi bilangan.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- =================================================
+                 KOLOM KANAN
+            ================================================== -->
+
+            <div class="space-y-8 fade-in">
+              <!-- ALUR SOLUSI -->
+
+              <div>
+                <!-- CARA KERJA -->
+
+                <div
+                  class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm"
+                >
+                  <h3
+                    class="font-bold text-base text-cPrimary mb-4 flex items-center"
+                  >
+                    <i class="fas fa-cogs text-cAccent mr-2"></i>
+
+                    Cara Kerja DigiMath
+                  </h3>
+
+                  <ul class="text-sm text-gray-600 space-y-3">
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-chevron-right text-cAccent text-xs mr-2 mt-1"
+                      ></i>
+
+                      <span>
+                        <strong>Desimal → Biner:</strong> Murid mencari dan
+                        menjumlahkan nilai kartu hingga mencapai bilangan
+                        target, kemudian menentukan kartu depan sebagai 1 dan
+                        kartu belakang sebagai 0.
+                      </span>
+                    </li>
+
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-chevron-right text-cAccent text-xs mr-2 mt-1"
+                      ></i>
+
+                      <span>
+                        <strong>Desimal → Oktal:</strong> Nilai yang terbentuk
+                        dikelompokkan menjadi kombinasi tiga kartu dengan nilai
+                        4, 2, dan 1.
+                      </span>
+                    </li>
+
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-chevron-right text-cAccent text-xs mr-2 mt-1"
+                      ></i>
+
+                      <span>
+                        <strong>Biner → Desimal:</strong> Posisi kartu dan
+                        keadaan depan/belakang digunakan untuk menjumlahkan
+                        nilai tempat yang sesuai.
+                      </span>
+                    </li>
+
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-chevron-right text-cAccent text-xs mr-2 mt-1"
+                      ></i>
+
+                      <span>
+                        <strong>Oktal → Desimal:</strong> Setiap digit oktal
+                        diuraikan menjadi kelompok kartu 4, 2, dan 1, kemudian
+                        seluruh nilai dijumlahkan.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- =================================================
+                   HASIL PENERAPAN + TINDAK LANJUT
+              ================================================== -->
+
+              <div class="flex flex-col gap-6">
+                <!-- HASIL PENERAPAN -->
+
+                <div
+                  class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <h3
+                    class="font-bold text-base text-cPrimary mb-3 flex items-center"
+                  >
+                    <i class="fas fa-chart-bar text-cAccent mr-2"></i>
+                    Hasil Penerapan
+                  </h3>
+
+                  <ul class="text-sm text-gray-600 space-y-3">
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-chevron-right text-cAccent text-xs mr-2 mt-1"
+                      ></i>
+                      <span>
+                        Murid menunjukkan ketertarikan dalam menggunakan
+                        DigiMath Card untuk melakukan perhitungan konversi
+                        sistem bilangan secara langsung.
+                      </span>
+                    </li>
+
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-chevron-right text-cAccent text-xs mr-2 mt-1"
+                      ></i>
+                      <span>
+                        DigiMath Card membantu beberapa murid memahami
+                        langkah-langkah konversi sistem bilangan dengan lebih
+                        mudah pada tahap awal pembelajaran.
+                      </span>
+                    </li>
+
+                    <li class="flex items-start">
+                      <i
+                        class="fas fa-chevron-right text-cAccent text-xs mr-2 mt-1"
+                      ></i>
+                      <span>
+                        Rata-rata nilai LKPD murid kelas 8A mencapai
+                        <strong class="text-cAccent">95,22</strong>, yang
+                        menunjukkan capaian pengerjaan LKPD yang tinggi pada
+                        penerapan pembelajaran ini.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Pengalaman Berharga -->
+
+                <div
+                  class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <h3
+                    class="font-bold text-base text-cPrimary mb-3 flex items-center"
+                  >
+                    <i class="fas fa-rocket text-cSecondary mr-2"></i>
+
+                    Pengalaman Berharga
+                  </h3>
+
+                  <ul class="text-sm text-gray-600 space-y-3">
+                    <!-- 1 -->
+                    <li class="flex items-start gap-2">
+                      <i
+                        class="fas fa-chevron-right text-cSecondary text-xs mt-1 flex-shrink-0"
+                      ></i>
+                      <div>
+                        <span class="font-semibold text-cPrimary"
+                          >Inovasi berawal dari kepekaan.</span
+                        >
+                        <span>
+                          Memahami bahwa inovasi pembelajaran bermula dari
+                          kepekaan terhadap kesulitan dan kebutuhan nyata
+                          murid.</span
+                        >
+                      </div>
+                    </li>
+
+                    <!-- 2 -->
+                    <li class="flex items-start gap-2">
+                      <i
+                        class="fas fa-chevron-right text-cSecondary text-xs mt-1 flex-shrink-0"
+                      ></i>
+                      <div>
+                        <span class="font-semibold text-cPrimary"
+                          >Konkretisasi konsep abstrak.</span
+                        >
+                        <span>
+                          Belajar mengubah konsep konversi sistem bilangan yang
+                          abstrak menjadi lebih konkret melalui media kartu yang
+                          visual dan manipulatif.</span
+                        >
+                      </div>
+                    </li>
+
+                    <!-- 3 -->
+                    <li class="flex items-start gap-2">
+                      <i
+                        class="fas fa-chevron-right text-cSecondary text-xs mt-1 flex-shrink-0"
+                      ></i>
+                      <div>
+                        <span class="font-semibold text-cPrimary"
+                          >Menghargai keberagaman gaya belajar.</span
+                        >
+                        <span>
+                          Respons murid selama penerapan menyadarkan bahwa
+                          setiap murid memiliki preferensi belajar yang berbeda,
+                          sehingga guru perlu menyediakan alternatif pendekatan
+                          pembelajaran.</span
+                        >
+                      </div>
+                    </li>
+
+                    <!-- 4 -->
+                    <li class="flex items-start gap-2">
+                      <i
+                        class="fas fa-chevron-right text-cSecondary text-xs mt-1 flex-shrink-0"
+                      ></i>
+                      <div>
+                        <span class="font-semibold text-cPrimary"
+                          >Komitmen menjadi pendidik reflektif.</span
+                        >
+                        <span>
+                          Pengalaman ini mendorong untuk menjadi pendidik yang
+                          lebih kreatif, reflektif, dan terbuka terhadap
+                          evaluasi serta pengembangan media pembelajaran secara
+                          berkelanjutan.</span
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =========================================================
+     HASIL PERBANDINGAN NILAI
+========================================================= -->
+          <section id="hasil" class="mt-12">
+            <div
+              class="bg-gradient-to-br from-green-50 via-white to-blue-50 border border-gray-200 rounded-3xl shadow-sm p-6 md:p-8"
+            >
+              <!-- =========================
+         JUDUL
+    ========================== -->
+              <div class="mb-2">
+                <span
+                  class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-cAccent mb-2"
+                >
+                  <i class="fas fa-chart-column mr-2"></i>
+                  Hasil Penerapan
+                </span>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-cPrimary">
+                  Perbandingan Hasil LKPD
+                </h2>
+
+                <p class="text-gray-500 mt-2 max-w-2xl leading-relaxed">
+                  Perbandingan rata-rata nilai LKPD antara kelas VIII A yang
+                  menggunakan DigiMath Card dan kelas VIII E yang tidak
+                  menggunakan DigiMath Card.
+                </p>
+              </div>
+
+              <!-- =========================
+         DIAGRAM BATANG
+    ========================== -->
+              <div
+                id="barChart"
+                class="relative h-[250px] md:h-[270px] border-b border-gray-200 px-8 md:px-16 -mt-2"
+              >
+                <!-- Area diagram -->
+                <div
+                  class="absolute left-8 right-8 md:left-16 md:right-16 bottom-0 h-[270px] flex items-end justify-center gap-20 md:gap-40"
+                >
+                  <!-- =====================
+             KELAS 8A
+        ====================== -->
+                  <div
+                    class="h-full w-28 flex flex-col justify-end items-center"
+                  >
+                    <!-- Nilai -->
+                    <span class="text-2xl font-bold text-cAccent mb-3">
+                      95.2
+                    </span>
+
+                    <!-- Area batang -->
+                    <div class="h-[220px] w-20 md:w-28 flex items-end">
+                      <!-- Batang -->
+                      <div
+                        class="bar-item w-full h-full bg-cAccent rounded-t-xl origin-bottom scale-y-0 transition-transform duration-1000 ease-out"
+                        data-scale="0.952"
+                        aria-label="Nilai rata-rata kelas 8A: 95.2"
+                      ></div>
+                    </div>
+
+                    <!-- Label -->
+                    <div class="mt-4 text-center">
+                      <p class="font-bold text-cPrimary">Kelas 8A</p>
+
+                      <p class="text-xs text-gray-400 mt-1">DigiMath Card</p>
+                    </div>
+                  </div>
+
+                  <!-- =====================
+             KELAS 8E
+        ====================== -->
+                  <div
+                    class="h-full w-28 flex flex-col justify-end items-center"
+                  >
+                    <!-- Nilai -->
+                    <span class="text-2xl font-bold text-cSecondary mb-3">
+                      88
+                    </span>
+
+                    <!-- Area batang -->
+                    <div class="h-[220px] w-20 md:w-28 flex items-end">
+                      <!-- Batang -->
+                      <div
+                        class="bar-item w-full h-full bg-cSecondary rounded-t-xl origin-bottom scale-y-0 transition-transform duration-1000 ease-out"
+                        data-scale="0.88"
+                        aria-label="Nilai rata-rata kelas 8E: 88"
+                      ></div>
+                    </div>
+
+                    <!-- Label -->
+                    <div class="mt-4 text-center">
+                      <p class="font-bold text-cPrimary">Kelas 8E</p>
+
+                      <p class="text-xs text-gray-400 mt-1">
+                        Tanpa DigiMath Card
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- =========================
+         RINGKASAN
+    ========================== -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <!-- 8A -->
+                <div
+                  class="rounded-2xl bg-white/80 backdrop-blur-sm border border-green-100 p-5"
+                >
+                  <p
+                    class="text-xs uppercase tracking-wide font-semibold text-gray-500"
+                  >
+                    Rata-rata 8A
+                  </p>
+
+                  <div class="flex items-end gap-2 mt-1">
+                    <span
+                      class="counter-value text-3xl font-bold text-cAccent"
+                      data-target="95.2"
+                      data-decimal="1"
+                    >
+                      0,0
+                    </span>
+
+                    <span class="text-sm text-gray-400 mb-1"> / 100 </span>
+                  </div>
+
+                  <p class="text-xs text-gray-500 mt-2">
+                    Menggunakan DigiMath Card
+                  </p>
+                </div>
+
+                <!-- 8E -->
+                <div
+                  class="rounded-2xl bg-white/80 backdrop-blur-sm border border-blue-100 p-5"
+                >
+                  <p
+                    class="text-xs uppercase tracking-wide font-semibold text-gray-500"
+                  >
+                    Rata-rata 8E
+                  </p>
+
+                  <div class="flex items-end gap-2 mt-1">
+                    <span
+                      class="counter-value text-3xl font-bold text-cSecondary"
+                      data-target="88"
+                      data-decimal="0"
+                    >
+                      0
+                    </span>
+
+                    <span class="text-sm text-gray-400 mb-1"> / 100 </span>
+                  </div>
+
+                  <p class="text-xs text-gray-500 mt-2">Tanpa DigiMath Card</p>
+                </div>
+
+                <!-- Selisih -->
+                <div
+                  class="rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-200 p-5"
+                >
+                  <p
+                    class="text-xs uppercase tracking-wide font-semibold text-gray-500"
+                  >
+                    Selisih
+                  </p>
+
+                  <div class="flex items-end gap-2 mt-1">
+                    <span
+                      class="counter-value text-3xl font-bold text-cPrimary"
+                      data-target="7.2"
+                      data-decimal="1"
+                    >
+                      0
+                    </span>
+
+                    <span class="text-sm text-gray-400 mb-1"> Nilai </span>
+                  </div>
+
+                  <p class="text-xs text-gray-500 mt-2">
+                    Perbedaan rata-rata nilai
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- =================================================
+               DOKUMENTASI PENERAPAN
+          ================================================== -->
+
+          <div
+            class="mt-14 bg-cBg p-6 sm:p-8 rounded-3xl border border-gray-200 fade-in"
+          >
+            <!-- HEADER -->
+
+            <div class="text-center mb-8">
+              <span
+                class="inline-block bg-cAccent/10 text-cAccent px-4 py-1.5 rounded-full text-xs font-bold tracking-wider mb-3"
+              >
+                DOKUMENTASI
+              </span>
+
+              <h2 class="text-2xl sm:text-3xl font-bold text-cPrimary mb-3">
+                Penerapan DigiMath Card
+              </h2>
+
+              <p class="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+                Dokumentasi aktivitas murid saat menggunakan DigiMath Card dalam
+                pembelajaran konversi sistem bilangan.
+              </p>
+            </div>
+
+            <!-- FOTO -->
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <!-- FOTO 1 -->
+
+              <div
+                class="documentation-card bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="overflow-hidden">
+                  <img
+                    src="assets/img/penggunaan-kartu.jpg"
+                    alt="Murid menggunakan DigiMath Card"
+                    class="documentation-image w-full h-56 object-cover"
+                  />
+                </div>
+
+                <div class="p-4">
+                  <p class="text-sm font-semibold text-cPrimary">
+                    Aktivitas menggunakan DigiMath Card
+                  </p>
+
+                  <p class="text-xs text-gray-500 mt-1">
+                    Murid menggunakan kartu untuk membantu proses konversi
+                    sistem bilangan.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FOTO 2 -->
+
+              <div
+                class="documentation-card bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="overflow-hidden rounded-xl">
+                  <video
+                    src="assets/img/proses-konversi.mp4"
+                    class="documentation-image w-full h-56 object-cover"
+                    controls
+                    muted
+                    playsinline
+                    preload="metadata"
+                  >
+                    Browser Anda tidak mendukung pemutaran video.
+                  </video>
+                </div>
+
+                <div class="p-4">
+                  <p class="text-sm font-semibold text-cPrimary">
+                    Proses konversi
+                  </p>
+
+                  <p class="text-xs text-gray-500 mt-1">
+                    Murid menyusun dan membalik kartu sesuai nilai bilangan yang
+                    dikonversi.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FOTO 3 -->
+
+              <div
+                class="documentation-card bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="overflow-hidden">
+                  <img
+                    src="assets/img/aktivitas-belajar.jpg"
+                    alt="Aktivitas kelompok menggunakan DigiMath Card"
+                    class="documentation-image w-full h-56 object-cover"
+                  />
+                </div>
+
+                <div class="p-4">
+                  <p class="text-sm font-semibold text-cPrimary">
+                    Aktivitas pembelajaran
+                  </p>
+
+                  <p class="text-xs text-gray-500 mt-1">
+                    Aktivitas murid saat menggunakan DigiMath Card dalam
+                    pembelajaran.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+               QUOTE BANNER
+          ================================================== -->
+
+          <div
+            class="mt-14 text-center bg-cPrimary text-white py-6 px-4 rounded-2xl shadow-lg fade-in"
+          >
+            <p class="font-light text-sm sm:text-base italic max-w-2xl mx-auto">
+              “DigiMath menjadikan proses konversi bilangan lebih konkret
+              melalui aktivitas menyusun, membalik, dan mengelompokkan kartu.”
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer
+      id="footer"
+      class="relative bg-gradient-to-b from-[#0B1E3B] to-cPrimary text-white py-5 mt-auto border-t border-white/10 shadow-2xl overflow-hidden"
+    >
+      <!-- Glowing Accent Divider -->
+
+      <div class="absolute top-0 inset-x-0 h-[2px] glow-divider"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-xs sm:text-sm"
+        >
+          <!-- Copyright + Social -->
+
+          <div
+            class="flex items-center gap-3 text-gray-300 flex-wrap justify-center"
+          >
+            <p>
+              &copy; Copyright
+
+              <strong class="text-white font-semibold tracking-wide">
+                Fyora
+              </strong>
+
+              . All Rights Reserved
+            </p>
+
+            <span class="text-gray-500"> • </span>
+
+            <a
+              href="https://www.instagram.com/farrosfira/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn-ig w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center text-xs shadow-sm"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <!-- Credits -->
+
+          <div class="text-gray-400 text-xs">
+            Designed by
+
+            <span
+              class="text-gray-200 font-medium hover:text-cAccent transition-colors"
+            >
+              Fyora
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
+
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-cAccent text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-green-700 z-50 transform hover:-translate-y-1"
+      aria-label="Kembali ke atas"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- =====================================================
+     CHART.JS
+====================================================== -->
+
+    <script>
+      /*
+  ======================================================
+  GRAFIK BATANG PERBANDINGAN KELAS
+  ======================================================
+
+  Kelas 8A:
+  Menggunakan DigiMath Card
+  Rata-rata = 95,22
+
+  Kelas 8E:
+  Tidak menggunakan DigiMath Card
+  Nilai = DATA SIMULASI / DUMMY
+  ======================================================
+  */
+
+      const chartElement = document.getElementById("classComparisonChart");
+
+      if (chartElement) {
+        new Chart(chartElement, {
+          type: "bar",
+
+          data: {
+            labels: ["Kelas 8A\n(DigiMath Card)", "Kelas 8E\n(Tanpa DigiMath)"],
+
+            datasets: [
+              {
+                label: "Rata-rata Nilai LKPD",
+
+                data: [95.22, 84.06],
+
+                borderWidth: 1,
+                borderRadius: 10,
+
+                backgroundColor: [
+                  "rgba(76, 154, 110, 0.85)",
+                  "rgba(30, 76, 138, 0.75)",
+                ],
+
+                borderColor: ["#4C9A6E", "#1E4C8A"],
+
+                hoverBackgroundColor: [
+                  "rgba(76, 154, 110, 1)",
+                  "rgba(30, 76, 138, 1)",
+                ],
+              },
+            ],
+          },
+
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+
+                ticks: {
+                  stepSize: 10,
+                  font: {
+                    family: "Poppins",
+                  },
+                },
+
+                title: {
+                  display: true,
+                  text: "Rata-rata Nilai",
+
+                  font: {
+                    family: "Poppins",
+                    weight: "600",
+                  },
+                },
+
+                grid: {
+                  color: "rgba(0, 0, 0, 0.07)",
+                },
+              },
+
+              x: {
+                ticks: {
+                  font: {
+                    family: "Poppins",
+                    weight: "500",
+                  },
+                },
+
+                title: {
+                  display: true,
+                  text: "Kelas",
+
+                  font: {
+                    family: "Poppins",
+                    weight: "600",
+                  },
+                },
+
+                grid: {
+                  display: false,
+                },
+              },
+            },
+
+            plugins: {
+              legend: {
+                display: false,
+              },
+
+              tooltip: {
+                backgroundColor: "#0F2A52",
+
+                titleFont: {
+                  family: "Poppins",
+                },
+
+                bodyFont: {
+                  family: "Poppins",
+                },
+
+                padding: 12,
+
+                callbacks: {
+                  label: function (context) {
+                    return "Rata-rata: " + context.parsed.y.toFixed(2);
+                  },
+                },
+              },
+            },
+          },
+        });
+      }
+    </script>
+
+    <!-- =====================================================
+     ANIMASI BATANG SAAT SCROLL
+====================================================== -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const chart = document.getElementById("barChart");
+        const bars = document.querySelectorAll(".bar-item");
+
+        if (!chart || !bars.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                bars.forEach((bar, index) => {
+                  setTimeout(() => {
+                    const scale = bar.dataset.scale;
+
+                    bar.style.transform = `scaleY(${scale})`;
+                  }, index * 180);
+                });
+
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.25,
+          },
+        );
+
+        observer.observe(chart);
+      });
+    </script>
+
+    <!-- =====================================================
+     ANIMASI ANGKA RINGKASAN
+====================================================== -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter-value");
+
+        if (!counters.length) return;
+
+        const animateCounter = (counter) => {
+          const target = parseFloat(counter.dataset.target);
+          const decimal = parseInt(counter.dataset.decimal) || 0;
+
+          const duration = 1500;
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+
+            const currentValue = target * easeOut;
+
+            counter.textContent = currentValue
+              .toFixed(decimal)
+              .replace(".", ",");
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target.toFixed(decimal).replace(".", ",");
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+        };
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                counters.forEach((counter, index) => {
+                  setTimeout(() => {
+                    animateCounter(counter);
+                  }, index * 200);
+                });
+
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.4,
+          },
+        );
+
+        const summarySection = counters[0].closest(".grid");
+
+        if (summarySection) {
+          observer.observe(summarySection);
+        }
+      });
+    </script>
+
+    <!-- =====================================================
+     MAIN JAVASCRIPT WEBSITE
+====================================================== -->
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

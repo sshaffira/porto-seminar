@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>DigiMath Card - Sistem Bilangan</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #0f172a;
+        color: #e2e8f0;
+        overflow-x: hidden;
+      }
+
+      /* ================================
+         NEON TEXT
+      ================================= */
+
+      .neon-text-blue {
+        color: #38bdf8;
+        text-shadow:
+          0 0 10px rgba(56, 189, 248, 0.7),
+          0 0 20px rgba(56, 189, 248, 0.5);
+      }
+
+      .neon-text-green {
+        color: #4ade80;
+        text-shadow:
+          0 0 10px rgba(74, 222, 128, 0.7),
+          0 0 20px rgba(74, 222, 128, 0.5);
+      }
+
+      /* ================================
+         DIGIMATH CARD
+      ================================= */
+
+      .digimath-card {
+        width: 92px;
+        height: 142px;
+        perspective: 1000px;
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+
+      .digimath-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
+
+      /* Kondisi kartu dibalik */
+      .digimath-card.is-flipped .digimath-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .digimath-card-face {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
+        border-radius: 12px;
+        overflow: hidden;
+
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+
+        user-select: none;
+      }
+
+      .digimath-card-face img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /*
+        Tampilan awal:
+        belakang.png = kartu bernilai 0
+
+        Setelah flip:
+        depan-X.png = kartu bernilai 1
+      */
+
+      .digimath-card-back {
+        transform: rotateY(180deg);
+      }
+
+      /* Efek hover */
+      .digimath-card:hover .digimath-card-inner {
+        transform: translateY(-6px);
+      }
+
+      .digimath-card.is-flipped:hover .digimath-card-inner {
+        transform: rotateY(180deg) translateY(-6px);
+      }
+
+      /* Fokus keyboard */
+      .digimath-card:focus-visible {
+        outline: 3px solid #4ade80;
+        outline-offset: 4px;
+        border-radius: 14px;
+      }
+
+      /* ================================
+         GRUP KARTU OKTAL
+      ================================= */
+
+      .digimath-card-group {
+        display: flex;
+        gap: 8px;
+        padding: 12px;
+
+        border: 2px solid rgba(168, 85, 247, 0.5);
+        border-radius: 14px;
+
+        background: rgba(88, 28, 135, 0.1);
+
+        position: relative;
+        margin-top: 14px;
+      }
+
+      .digimath-card-group-label {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        white-space: nowrap;
+
+        background: #6b21a8;
+        color: #e9d5ff;
+
+        border: 1px solid #a855f7;
+        border-radius: 9999px;
+
+        padding: 2px 9px;
+
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      /* ================================
+         RESPONSIVE
+      ================================= */
+
+      @media (max-width: 640px) {
+        .digimath-card {
+          width: 76px;
+          height: 118px;
+        }
+
+        .digimath-card-group {
+          gap: 6px;
+          padding: 9px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header
+      class="p-4 border-b border-slate-700 bg-slate-900 bg-opacity-80 backdrop-blur sticky top-0 z-50 flex justify-between items-center"
+    >
+      <div class="text-xl font-bold neon-text-blue">
+        <i class="fas fa-microchip mr-2"></i>
+        Informatika Kelas 8
+      </div>
+
+      <div class="text-slate-400 font-semibold">DigiMath Card</div>
+    </header>
+
+    <!-- =========================================
+         MAIN - SLIDE 8
+    ========================================== -->
+
+    <main class="flex-grow flex items-center justify-center p-6 relative">
+      <div id="slide8" class="max-w-6xl w-full">
+        <!-- JUDUL -->
+
+        <div class="text-center mb-6">
+          <h2 class="text-3xl md:text-5xl font-bold mb-3 neon-text-blue">
+            DigiMath Card
+          </h2>
+
+          <p class="text-lg text-slate-300">
+            Klik kartu untuk membaliknya. Sisi depan =
+            <strong class="text-green-400">1</strong>, sisi belakang =
+            <strong class="text-slate-400">0</strong>. Setiap 3 kartu membentuk
+            1 digit oktal (4, 2, 1).
+          </p>
+        </div>
+
+        <!-- =========================================
+             KONTENER KARTU
+        ========================================== -->
+
+        <div
+          class="bg-slate-900 p-5 md:p-6 rounded-2xl border border-slate-700 shadow-xl max-w-6xl mx-auto overflow-x-auto custom-scrollbar"
+        >
+          <!-- PETUNJUK -->
+
+          <p class="text-xs text-yellow-400 text-center mb-5 animate-pulse">
+            <i class="fas fa-hand-pointer mr-1"></i>
+            Klik kartu untuk membalik tampak depan dan belakang.
+          </p>
+
+          <!-- =========================================
+               SEMUA KARTU
+          ========================================== -->
+
+          <div
+            class="flex flex-nowrap justify-start xl:justify-center gap-2 md:gap-3 mb-8 pb-4 min-w-max"
+          >
+            <!-- =======================================
+                 GRUP OKTAL 4
+                 2048 - 1024 - 512
+            ======================================== -->
+
+            <div class="digimath-card-group">
+              <div class="digimath-card-group-label">Grup 4</div>
+
+              <!-- Kartu 2048 -->
+
+              <div
+                id="card-0"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 2048, saat ini 0"
+                onclick="toggleCard(0)"
+                onkeydown="handleCardKey(event, 0)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 2048 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-12.png"
+                      alt="Kartu DigiMath 2048 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kartu 1024 -->
+
+              <div
+                id="card-1"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 1024, saat ini 0"
+                onclick="toggleCard(1)"
+                onkeydown="handleCardKey(event, 1)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 1024 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-11.png"
+                      alt="Kartu DigiMath 1024 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kartu 512 -->
+
+              <div
+                id="card-2"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 512, saat ini 0"
+                onclick="toggleCard(2)"
+                onkeydown="handleCardKey(event, 2)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 512 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-10.png"
+                      alt="Kartu DigiMath 512 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- =======================================
+                 GRUP OKTAL 3
+                 256 - 128 - 64
+            ======================================== -->
+
+            <div class="digimath-card-group">
+              <div class="digimath-card-group-label">Grup 3</div>
+
+              <!-- 256 -->
+
+              <div
+                id="card-3"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 256, saat ini 0"
+                onclick="toggleCard(3)"
+                onkeydown="handleCardKey(event, 3)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 256 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-9.png"
+                      alt="Kartu DigiMath 256 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 128 -->
+
+              <div
+                id="card-4"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 128, saat ini 0"
+                onclick="toggleCard(4)"
+                onkeydown="handleCardKey(event, 4)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 128 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-8.png"
+                      alt="Kartu DigiMath 128 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 64 -->
+
+              <div
+                id="card-5"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 64, saat ini 0"
+                onclick="toggleCard(5)"
+                onkeydown="handleCardKey(event, 5)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 64 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-7.png"
+                      alt="Kartu DigiMath 64 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- =======================================
+                 GRUP OKTAL 2
+                 32 - 16 - 8
+            ======================================== -->
+
+            <div class="digimath-card-group">
+              <div class="digimath-card-group-label">Grup 2</div>
+
+              <!-- 32 -->
+
+              <div
+                id="card-6"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 32, saat ini 0"
+                onclick="toggleCard(6)"
+                onkeydown="handleCardKey(event, 6)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 32 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-6.png"
+                      alt="Kartu DigiMath 32 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 16 -->
+
+              <div
+                id="card-7"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 16, saat ini 0"
+                onclick="toggleCard(7)"
+                onkeydown="handleCardKey(event, 7)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 16 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-5.png"
+                      alt="Kartu DigiMath 16 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 8 -->
+
+              <div
+                id="card-8"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 8, saat ini 0"
+                onclick="toggleCard(8)"
+                onkeydown="handleCardKey(event, 8)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 8 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-4.png"
+                      alt="Kartu DigiMath 8 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- =======================================
+                 GRUP OKTAL 1
+                 4 - 2 - 1
+            ======================================== -->
+
+            <div class="digimath-card-group">
+              <div class="digimath-card-group-label">Grup 1</div>
+
+              <!-- 4 -->
+
+              <div
+                id="card-9"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 4, saat ini 0"
+                onclick="toggleCard(9)"
+                onkeydown="handleCardKey(event, 9)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 4 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-3.png"
+                      alt="Kartu DigiMath 4 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2 -->
+
+              <div
+                id="card-10"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 2, saat ini 0"
+                onclick="toggleCard(10)"
+                onkeydown="handleCardKey(event, 10)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 2 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-2.png"
+                      alt="Kartu DigiMath 2 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- 1 -->
+
+              <div
+                id="card-11"
+                class="digimath-card"
+                tabindex="0"
+                role="button"
+                aria-label="Kartu 1, saat ini 0"
+                onclick="toggleCard(11)"
+                onkeydown="handleCardKey(event, 11)"
+              >
+                <div class="digimath-card-inner">
+                  <div class="digimath-card-face digimath-card-front">
+                    <img
+                      src="assets/img/digimath/belakang.png"
+                      alt="Kartu DigiMath 1 - nilai 0"
+                    />
+                  </div>
+
+                  <div class="digimath-card-face digimath-card-back">
+                    <img
+                      src="assets/img/digimath/depan-1.png"
+                      alt="Kartu DigiMath 1 - nilai 1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- =========================================
+               PAPAN HASIL
+          ========================================== -->
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 bg-slate-800 p-4 md:p-6 rounded-xl border border-slate-600"
+          >
+            <!-- BINER -->
+
+            <div
+              class="text-center bg-slate-900 py-3 rounded-xl border border-green-500/30"
+            >
+              <p class="text-slate-400 text-xs md:text-sm mb-1">Kode Biner</p>
+
+              <div
+                class="text-xl md:text-2xl font-mono text-green-400 tracking-widest"
+                id="card-binary-result"
+              >
+                000 000 000 000
+              </div>
+            </div>
+
+            <!-- OKTAL -->
+
+            <div
+              class="text-center bg-slate-900 py-3 rounded-xl border border-purple-500/30"
+            >
+              <p class="text-slate-400 text-xs md:text-sm mb-1">Kode Oktal</p>
+
+              <div
+                class="text-2xl md:text-3xl font-mono text-purple-400 tracking-[0.2em] md:tracking-[0.25em]"
+                id="card-octal-result"
+              >
+                0000
+              </div>
+            </div>
+
+            <!-- DESIMAL -->
+
+            <div
+              class="text-center bg-slate-900 py-3 rounded-xl border border-pink-500/30"
+            >
+              <p class="text-slate-400 text-xs md:text-sm mb-1">
+                Nilai Desimal
+              </p>
+
+              <div
+                class="text-3xl md:text-4xl font-bold text-pink-400 drop-shadow-[0_0_8px_rgba(244,114,182,0.5)]"
+                id="card-decimal-result"
+              >
+                0
+              </div>
+            </div>
+          </div>
+
+          <!-- =========================================
+               TOMBOL RESET
+          ========================================== -->
+
+          <div class="mt-6 text-center">
+            <button
+              onclick="resetCards()"
+              class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-6 py-2 rounded-lg font-bold transition shadow-lg text-sm md:text-base"
+            >
+              <i class="fas fa-redo-alt mr-2"></i>
+              Mulai Ulang
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <!-- Footer -->
+    <footer
+      id="footer"
+      class="relative bg-gradient-to-b from-[#0B1E3B] to-cPrimary text-white py-5 mt-auto border-t border-white/10 shadow-2xl overflow-hidden"
+    >
+      <!-- Glowing Accent Divider Top -->
+      <div class="absolute top-0 inset-x-0 h-[2px] glow-divider"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-xs sm:text-sm"
+        >
+          <!-- 1 Baris: Copyright + Social Link -->
+          <div
+            class="flex items-center gap-3 text-gray-300 flex-wrap justify-center"
+          >
+            <p>
+              &copy; Copyright
+              <strong class="text-white font-semibold tracking-wide"
+                >Aqiqul Putra Zaibintoro</strong
+              >. All Rights Reserved
+            </p>
+
+            <span class="text-gray-500">•</span>
+
+            <a
+              href="https://www.instagram.com/kawula.sinten/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn-ig w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center text-xs shadow-sm"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <!-- Credits -->
+          <div class="text-gray-400 text-xs">
+            Designed by
+            <span
+              class="text-gray-200 font-medium hover:text-cAccent transition-colors"
+            >
+            Kawula
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+         JAVASCRIPT DIGIMATH CARD
+    ========================================== -->
+
+    <script>
+      /*
+      ==================================================
+      DATA KARTU
+      ==================================================
+
+      Urutan kartu:
+      2048, 1024, 512,
+      256, 128, 64,
+      32, 16, 8,
+      4, 2, 1
+
+      Setiap kartu:
+      0 = belakang
+      1 = depan
+      */
+
+      const cardValues = [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1];
+
+      /*
+      ==================================================
+      STATUS AWAL KARTU
+      ==================================================
+
+      Semua kartu dimulai dari 0.
+      */
+
+      let cardStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+      /*
+      ==================================================
+      MEMBALIK KARTU
+      ==================================================
+      */
+
+      function toggleCard(index) {
+        cardStates[index] = cardStates[index] === 0 ? 1 : 0;
+
+        updateCardUI();
+      }
+
+      /*
+      ==================================================
+      AKSESIBILITAS KEYBOARD
+      ==================================================
+      */
+
+      function handleCardKey(event, index) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+
+          toggleCard(index);
+        }
+      }
+
+      /*
+      ==================================================
+      UPDATE TAMPILAN KARTU + HASIL
+      ==================================================
+      */
+
+      function updateCardUI() {
+        let binStr = "";
+        let decSum = 0;
+        let octStr = "";
+
+        /*
+        12 kartu dibagi menjadi 4 grup.
+
+        Setiap grup terdiri dari:
+        4 - 2 - 1
+
+        Sehingga:
+
+        Grup 4 = 2048, 1024, 512
+        Grup 3 = 256, 128, 64
+        Grup 2 = 32, 16, 8
+        Grup 1 = 4, 2, 1
+        */
+
+        for (let g = 0; g < 4; g++) {
+          let octVal = 0;
+
+          /*
+          Setiap grup memiliki 3 kartu.
+          */
+
+          for (let i = 0; i < 3; i++) {
+            const idx = g * 3 + i;
+
+            const card = document.getElementById("card-" + idx);
+
+            /*
+            Bobot setiap kartu dalam
+            representasi oktal:
+
+            kartu pertama = 4
+            kartu kedua   = 2
+            kartu ketiga  = 1
+            */
+
+            const weight = Math.pow(2, 2 - i);
+
+            /*
+            Jika kartu bernilai 1
+            */
+
+            if (cardStates[idx] === 1) {
+              card.classList.add("is-flipped");
+
+              card.setAttribute(
+                "aria-label",
+                `Kartu ${cardValues[idx]}, saat ini 1`,
+              );
+
+              /*
+              Biner
+              */
+
+              binStr += "1";
+
+              /*
+              Desimal
+              */
+
+              decSum += cardValues[idx];
+
+              /*
+              Oktal
+              */
+
+              octVal += weight;
+            } else {
+              /*
+            Jika kartu bernilai 0
+            */
+              card.classList.remove("is-flipped");
+
+              card.setAttribute(
+                "aria-label",
+                `Kartu ${cardValues[idx]}, saat ini 0`,
+              );
+
+              /*
+              Biner
+              */
+
+              binStr += "0";
+            }
+          }
+
+          /*
+          Tambahkan hasil digit oktal
+          */
+
+          octStr += octVal.toString();
+
+          /*
+          Spasi setiap 3 bit
+          */
+
+          if (g < 3) {
+            binStr += " ";
+          }
+        }
+
+        /*
+        ==================================================
+        TAMPILKAN HASIL
+        ==================================================
+        */
+
+        document.getElementById("card-binary-result").innerText = binStr;
+
+        document.getElementById("card-octal-result").innerText = octStr;
+
+        document.getElementById("card-decimal-result").innerText = decSum;
+      }
+
+      /*
+      ==================================================
+      RESET SEMUA KARTU
+      ==================================================
+      */
+
+      function resetCards() {
+        cardStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+        updateCardUI();
+      }
+
+      /*
+      ==================================================
+      INISIALISASI
+      ==================================================
+      */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        updateCardUI();
+      });
+    </script>
+  </body>
+</html>
