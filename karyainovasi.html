@@ -524,7 +524,7 @@
                       ></i>
                       <span>
                         Rata-rata nilai LKPD murid kelas 8A mencapai
-                        <strong class="text-cAccent">95,22</strong>, yang
+                        <strong class="text-cAccent">90</strong>, yang
                         menunjukkan capaian pengerjaan LKPD yang tinggi pada
                         penerapan pembelajaran ini.
                       </span>
@@ -622,188 +622,86 @@
           </div>
 
           <!-- =========================================================
-     HASIL PERBANDINGAN NILAI
-========================================================= -->
-          <section id="hasil" class="mt-12">
+               KETERCAPAIAN LKPD
+          ========================================================= -->
+          <section id="hasil" class="mt-14 fade-in">
             <div
-              class="bg-gradient-to-br from-green-50 via-white to-blue-50 border border-gray-200 rounded-3xl shadow-sm p-6 md:p-8"
+              class="bg-white border border-gray-200 rounded-3xl shadow-sm p-8 md:p-12 text-center"
             >
-              <!-- =========================
-         JUDUL
-    ========================== -->
-              <div class="mb-2">
+              <!-- HEADER -->
+              <div class="mb-10">
                 <span
-                  class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-cAccent mb-2"
+                  class="inline-block bg-cPrimary/10 text-cPrimary px-4 py-1.5 rounded-full text-xs font-bold tracking-wider mb-3"
                 >
-                  <i class="fas fa-chart-column mr-2"></i>
-                  Hasil Penerapan
+                  EVALUASI PEMBELAJARAN
                 </span>
 
-                <h2 class="text-2xl md:text-3xl font-bold text-cPrimary">
-                  Perbandingan Hasil LKPD
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0E4B75] tracking-wide mb-3 uppercase">
+                  Ketercapaian LKPD
                 </h2>
 
-                <p class="text-gray-500 mt-2 max-w-2xl leading-relaxed">
-                  Perbandingan rata-rata nilai LKPD antara kelas VIII A yang
-                  menggunakan DigiMath Card dan kelas VIII E yang tidak
-                  menggunakan DigiMath Card.
+                <p class="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto font-normal">
+                  Penilaian LKPD dilakukan kepada 31 murid berdasarkan pengerjaan LKPD
                 </p>
               </div>
 
-              <!-- =========================
-         DIAGRAM BATANG
-    ========================== -->
-              <div
-                id="barChart"
-                class="relative h-[250px] md:h-[270px] border-b border-gray-200 px-8 md:px-16 -mt-2"
-              >
-                <!-- Area diagram -->
-                <div
-                  class="absolute left-8 right-8 md:left-16 md:right-16 bottom-0 h-[270px] flex items-end justify-center gap-20 md:gap-40"
-                >
-                  <!-- =====================
-             KELAS 8A
-        ====================== -->
-                  <div
-                    class="h-full w-28 flex flex-col justify-end items-center"
-                  >
-                    <!-- Nilai -->
-                    <span class="text-2xl font-bold text-cAccent mb-3">
-                      95.2
-                    </span>
-
-                    <!-- Area batang -->
-                    <div class="h-[220px] w-20 md:w-28 flex items-end">
-                      <!-- Batang -->
-                      <div
-                        class="bar-item w-full h-full bg-cAccent rounded-t-xl origin-bottom scale-y-0 transition-transform duration-1000 ease-out"
-                        data-scale="0.952"
-                        aria-label="Nilai rata-rata kelas 8A: 95.2"
-                      ></div>
-                    </div>
-
-                    <!-- Label -->
-                    <div class="mt-4 text-center">
-                      <p class="font-bold text-cPrimary">Kelas 8A</p>
-
-                      <p class="text-xs text-gray-400 mt-1">DigiMath Card</p>
-                    </div>
-                  </div>
-
-                  <!-- =====================
-             KELAS 8E
-        ====================== -->
-                  <div
-                    class="h-full w-28 flex flex-col justify-end items-center"
-                  >
-                    <!-- Nilai -->
-                    <span class="text-2xl font-bold text-cSecondary mb-3">
-                      88
-                    </span>
-
-                    <!-- Area batang -->
-                    <div class="h-[220px] w-20 md:w-28 flex items-end">
-                      <!-- Batang -->
-                      <div
-                        class="bar-item w-full h-full bg-cSecondary rounded-t-xl origin-bottom scale-y-0 transition-transform duration-1000 ease-out"
-                        data-scale="0.88"
-                        aria-label="Nilai rata-rata kelas 8E: 88"
-                      ></div>
-                    </div>
-
-                    <!-- Label -->
-                    <div class="mt-4 text-center">
-                      <p class="font-bold text-cPrimary">Kelas 8E</p>
-
-                      <p class="text-xs text-gray-400 mt-1">
-                        Tanpa DigiMath Card
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- =========================
-         RINGKASAN
-    ========================== -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <!-- 8A -->
-                <div
-                  class="rounded-2xl bg-white/80 backdrop-blur-sm border border-green-100 p-5"
-                >
-                  <p
-                    class="text-xs uppercase tracking-wide font-semibold text-gray-500"
-                  >
-                    Rata-rata 8A
-                  </p>
-
-                  <div class="flex items-end gap-2 mt-1">
-                    <span
-                      class="counter-value text-3xl font-bold text-cAccent"
-                      data-target="95.2"
-                      data-decimal="1"
+              <!-- KARTU STATISTIK (PIRAMIDA: 2 ATAS, 1 BAWAH) -->
+              <div class="max-w-2xl mx-auto space-y-6">
+                <!-- BARIS ATAS: Rata-rata Nilai & Nilai Tertinggi -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10">
+                  <!-- KARTU 1: Rata-rata Nilai -->
+                  <div class="flex flex-col items-center">
+                    <h3 class="text-base sm:text-lg font-bold text-[#0E4B75] mb-3">
+                      Rata-rata Nilai
+                    </h3>
+                    <div
+                      class="w-full max-w-[240px] bg-[#9BB3C4] rounded-2xl py-6 px-4 shadow-sm flex items-center justify-center transform hover:scale-105 transition-all duration-300"
                     >
-                      0,0
-                    </span>
-
-                    <span class="text-sm text-gray-400 mb-1"> / 100 </span>
+                      <span
+                        class="counter-value text-4xl sm:text-5xl font-black text-[#0B2545] tracking-tight"
+                        data-target="90"
+                        data-decimal="0"
+                      >
+                        0
+                      </span>
+                    </div>
                   </div>
 
-                  <p class="text-xs text-gray-500 mt-2">
-                    Menggunakan DigiMath Card
-                  </p>
+                  <!-- KARTU 2: Nilai Tertinggi -->
+                  <div class="flex flex-col items-center">
+                    <h3 class="text-base sm:text-lg font-bold text-[#0E4B75] mb-3">
+                      Nilai Tertinggi
+                    </h3>
+                    <div
+                      class="w-full max-w-[240px] bg-[#9BB3C4] rounded-2xl py-6 px-4 shadow-sm flex items-center justify-center transform hover:scale-105 transition-all duration-300"
+                    >
+                      <span
+                        class="counter-value text-4xl sm:text-5xl font-black text-[#0B2545] tracking-tight"
+                        data-target="95"
+                        data-decimal="0"
+                      >
+                        0
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                <!-- 8E -->
-                <div
-                  class="rounded-2xl bg-white/80 backdrop-blur-sm border border-blue-100 p-5"
-                >
-                  <p
-                    class="text-xs uppercase tracking-wide font-semibold text-gray-500"
+                <!-- BARIS BAWAH: Nilai Terendah (TENGAH) -->
+                <div class="flex flex-col items-center pt-2">
+                  <h3 class="text-base sm:text-lg font-bold text-[#0E4B75] mb-3">
+                    Nilai Terendah
+                  </h3>
+                  <div
+                    class="w-full max-w-[240px] bg-[#9BB3C4] rounded-2xl py-6 px-4 shadow-sm flex items-center justify-center transform hover:scale-105 transition-all duration-300"
                   >
-                    Rata-rata 8E
-                  </p>
-
-                  <div class="flex items-end gap-2 mt-1">
                     <span
-                      class="counter-value text-3xl font-bold text-cSecondary"
-                      data-target="88"
+                      class="counter-value text-4xl sm:text-5xl font-black text-[#0B2545] tracking-tight"
+                      data-target="80"
                       data-decimal="0"
                     >
                       0
                     </span>
-
-                    <span class="text-sm text-gray-400 mb-1"> / 100 </span>
                   </div>
-
-                  <p class="text-xs text-gray-500 mt-2">Tanpa DigiMath Card</p>
-                </div>
-
-                <!-- Selisih -->
-                <div
-                  class="rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-200 p-5"
-                >
-                  <p
-                    class="text-xs uppercase tracking-wide font-semibold text-gray-500"
-                  >
-                    Selisih
-                  </p>
-
-                  <div class="flex items-end gap-2 mt-1">
-                    <span
-                      class="counter-value text-3xl font-bold text-cPrimary"
-                      data-target="7.2"
-                      data-decimal="1"
-                    >
-                      0
-                    </span>
-
-                    <span class="text-sm text-gray-400 mb-1"> Nilai </span>
-                  </div>
-
-                  <p class="text-xs text-gray-500 mt-2">
-                    Perbedaan rata-rata nilai
-                  </p>
                 </div>
               </div>
             </div>
@@ -1007,143 +905,7 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- =====================================================
-     CHART.JS
-====================================================== -->
 
-    <script>
-      /*
-  ======================================================
-  GRAFIK BATANG PERBANDINGAN KELAS
-  ======================================================
-
-  Kelas 8A:
-  Menggunakan DigiMath Card
-  Rata-rata = 95,22
-
-  Kelas 8E:
-  Tidak menggunakan DigiMath Card
-  Nilai = DATA SIMULASI / DUMMY
-  ======================================================
-  */
-
-      const chartElement = document.getElementById("classComparisonChart");
-
-      if (chartElement) {
-        new Chart(chartElement, {
-          type: "bar",
-
-          data: {
-            labels: ["Kelas 8A\n(DigiMath Card)", "Kelas 8E\n(Tanpa DigiMath)"],
-
-            datasets: [
-              {
-                label: "Rata-rata Nilai LKPD",
-
-                data: [95.22, 84.06],
-
-                borderWidth: 1,
-                borderRadius: 10,
-
-                backgroundColor: [
-                  "rgba(76, 154, 110, 0.85)",
-                  "rgba(30, 76, 138, 0.75)",
-                ],
-
-                borderColor: ["#4C9A6E", "#1E4C8A"],
-
-                hoverBackgroundColor: [
-                  "rgba(76, 154, 110, 1)",
-                  "rgba(30, 76, 138, 1)",
-                ],
-              },
-            ],
-          },
-
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 100,
-
-                ticks: {
-                  stepSize: 10,
-                  font: {
-                    family: "Poppins",
-                  },
-                },
-
-                title: {
-                  display: true,
-                  text: "Rata-rata Nilai",
-
-                  font: {
-                    family: "Poppins",
-                    weight: "600",
-                  },
-                },
-
-                grid: {
-                  color: "rgba(0, 0, 0, 0.07)",
-                },
-              },
-
-              x: {
-                ticks: {
-                  font: {
-                    family: "Poppins",
-                    weight: "500",
-                  },
-                },
-
-                title: {
-                  display: true,
-                  text: "Kelas",
-
-                  font: {
-                    family: "Poppins",
-                    weight: "600",
-                  },
-                },
-
-                grid: {
-                  display: false,
-                },
-              },
-            },
-
-            plugins: {
-              legend: {
-                display: false,
-              },
-
-              tooltip: {
-                backgroundColor: "#0F2A52",
-
-                titleFont: {
-                  family: "Poppins",
-                },
-
-                bodyFont: {
-                  family: "Poppins",
-                },
-
-                padding: 12,
-
-                callbacks: {
-                  label: function (context) {
-                    return "Rata-rata: " + context.parsed.y.toFixed(2);
-                  },
-                },
-              },
-            },
-          },
-        });
-      }
-    </script>
 
     <!-- =====================================================
      ANIMASI BATANG SAAT SCROLL
